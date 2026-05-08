@@ -874,6 +874,30 @@ footer {
   border:1px solid var(--border2); border-radius:3px; padding:.18rem .5rem; letter-spacing:.04em;
 }
 
+/* ── COMPANY LOGO BESIDE NAME ON HOVER ── */
+.exp-company { position: relative; display: inline-flex; align-items: center; gap: .75rem; cursor: default; }
+
+.exp-logo-tooltip {
+  display: inline-flex;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-8px) scale(0.88);
+  transition: opacity .25s cubic-bezier(.34,1.56,.64,1), transform .3s cubic-bezier(.34,1.56,.64,1);
+}
+.exp-company:hover .exp-logo-tooltip {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.exp-logo-tooltip img {
+  display: block;
+  height: 36px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.08);
+}
+
 /* easter egg #4 — node thought bubble */
 .exp-thought {
   font-family:'Geist Mono',monospace; font-size:.72rem; color:var(--a3);
@@ -1621,19 +1645,32 @@ footer {
     <div class="exp-entry" data-delay=".1">
       <div class="exp-node" data-thought="be patient ..."></div>
       <div class="exp-node-ripple-host"></div>
-      <div class="exp-company">Independent Project (WIP)</div>
-      <div class="exp-role">???</div>
-      <div class="exp-dates">2026 — present</div>
+      <div class="exp-company" style="background:linear-gradient(135deg,#ffb7c5,#f472b6,#e879a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Stealth Startup
+        <div class="exp-logo-tooltip">
+          <img src="data:image/png;base64,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" alt="Anthropic" style="height:52px;background:#000;padding:8px;border-radius:10px;">
+        </div>
+      </div>
+      <div class="exp-role">Founder</div>
+      <div class="exp-dates">May 2026 — present</div>
       <ul class="exp-bullets">
         <li> Big things are coming ...</li>
       </ul>
       <div class="exp-tags">
-        <span class="exp-tag">Claude Code CLI</span>
-        <span class="exp-tag">Agentic AI</span>
-        <span class="exp-tag">GaaS</span>
-        <span class="exp-tag">UI/UX</span>
-        <span class="exp-tag">HTML</span>
+        <span class="exp-tag">Python</span>
+        <span class="exp-tag">TS</span>
         <span class="exp-tag">JS</span>
+        <span class="exp-tag">SQL</span>
+        <span class="exp-tag">FastAPI</span>
+        <span class="exp-tag">Uvicorn</span>
+        <span class="exp-tag">Redis</span>
+        <span class="exp-tag">Celery</span>
+        <span class="exp-tag">JWT</span>
+        <span class="exp-tag">React</span>
+        <span class="exp-tag">Axios</span>
+        <span class="exp-tag">Expo</span>
+        <span class="exp-tag">PowerShell/Bash</span>
+        <span class="exp-tag">Git</span>
+        <span class="exp-tag">UI/UX</span>
       </div>
       <div class="exp-thought"></div>
     </div>
@@ -1642,9 +1679,13 @@ footer {
     <div class="exp-entry" data-delay=".2">
       <div class="exp-node" data-thought="honest thought: i learned more from my broken pipelines than the working ones"></div>
       <div class="exp-node-ripple-host"></div>
-      <div class="exp-company">SAP SE</div>
+      <div class="exp-company" style="background:linear-gradient(135deg,#00a2e2,#0070c0,#004992);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">SAP SE
+        <div class="exp-logo-tooltip">
+          <img src="assets/SAPLOGO.png" alt="SAP" style="height:56px;background:#fff;padding:2px 12px;border-radius:8px;">
+        </div>
+      </div>
       <div class="exp-role">Data Engineer &amp; Analyst (Hidden as a Digital Demand Associate)</div>
-      <div class="exp-dates">2025 — present</div>
+      <div class="exp-dates">Nov 2025 — May 2026</div>
       <ul class="exp-bullets">
         <li>Transitioned legacy data workflows from self-developed VBA modules to a high-throughput ETL pipeline; increased data quality from 73% to 90% and slashed manual processing by 81%.</li>
         <li>Developed an interactive 2026 Sales Performance Hub for two global teams, automating the tracking of quarterly targets, pipeline generation, and lead handovers with granular drill-down capabilities.</li>
@@ -1664,7 +1705,11 @@ footer {
     <div class="exp-entry" data-delay=".3">
       <div class="exp-node" data-thought="&lt;internal_log&gt; first commit was just 'hello world'. last commit was 400 lines of optimized Cython. growth.&lt;/internal_log&gt;"></div>
       <div class="exp-node-ripple-host"></div>
-      <div class="exp-company">Universitat Autónoma de Barcelona</div>
+      <div class="exp-company" style="color:#007a33;">Universitat Autónoma de Barcelona
+        <div class="exp-logo-tooltip">
+          <img src="assets/uab_logo.jpg" alt="UAB" style="height:52px;background:#007a33;padding:8px 12px;border-radius:8px;">
+        </div>
+      </div>
       <div class="exp-role">Bachelor of Science - Data Engineering</div>
       <div class="exp-dates">2021 — Expected July 2026</div>
       <ul class="exp-bullets">
