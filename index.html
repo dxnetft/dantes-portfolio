@@ -366,6 +366,22 @@ section { padding:7rem 3.5rem; position:relative; z-index:1; }
 }
 .ac-label { color:var(--a1); margin-bottom:.4rem; letter-spacing:.1em; font-size:.6rem; text-transform:uppercase; }
 
+/* currently + languages side by side */
+.about-currently-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.about-currently-row .about-currently { flex-shrink: 0; }
+.about-languages {
+  font-family:'Geist Mono',monospace; font-size:.65rem;
+  line-height:1.9; border-left:2px solid var(--a2);
+  padding-left:1.2rem; color:var(--muted2);
+  margin-left: 2rem;
+}
+.about-languages .ac-label { color:var(--a2); }
+.lang-level { color:var(--muted); font-size:.58rem; margin-left:.5rem; }
+
 /* ── GAME RANKS ── */
 .game-ranks {
   margin-top:2rem;
@@ -1374,11 +1390,21 @@ footer {
         <span class="phil-pill">the ethics of information</span>
         <span class="phil-pill">AI is the engine, clean data is the fuel</span>
       </div>
-      <div class="about-currently">
-        <div class="ac-label">[ currently ]</div>
-        Finishing B.Sc Data Engineering · 5th year<br>
-        Building an undisclosed project in stealth mode<br>
-        Learning: AI Daily news and GaaS<br>
+      <div class="about-currently-row">
+        <div class="about-currently">
+          <div class="ac-label">[ currently ]</div>
+          Finishing B.Sc Data Engineering · 5th year<br>
+          Building an undisclosed project in stealth mode<br>
+          Learning: AI Daily news, GaaS and Japanese<br>
+        </div>
+        <div class="about-languages">
+          <div class="ac-label">[ languages ]</div>
+          Spanish <span class="lang-level">— Native</span><br>
+          Catalan <span class="lang-level">— Native</span><br>
+          English <span class="lang-level">— Advanced (C1)</span><br>
+          French <span class="lang-level">— High School Diploma (C1 equivalent)</span><br>
+          French <span class="lang-level">— Elementary Proficiency</span><br>
+        </div>
       </div>
 
       <!-- GAME RANKS -->
