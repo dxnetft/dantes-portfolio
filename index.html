@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +11,28 @@
   gtag('js', new Date());
   gtag('config', 'G-0ZPGJ85QLE');
 </script>
-<title>Dante Rodríguez Milán | Applied AI Engineer</title>
-<meta name="description" content="Applied AI Engineer with a data engineering foundation. I build production AI systems end to end, from data pipelines to shipped products. Based in Barcelona, Spain.">
+<title>Dante Rodríguez Milán | Ingeniero de IA aplicada</title>
+<meta name="description" content="Ingeniero de IA aplicada con base en ingeniería de datos. Construyo sistemas de IA en producción de principio a fin, desde los pipelines de datos hasta los productos publicados. Desde Barcelona, España." data-i18n-attr="content:a0">
 <meta name="theme-color" content="#E6E4EE">
 <!-- Open Graph (LinkedIn, Facebook, WhatsApp, Slack, Discord) -->
-<meta property="og:title" content="Dante Rodríguez Milán | Applied AI Engineer">
-<meta property="og:description" content="Applied AI Engineer with a data engineering foundation. I build production AI systems end to end, from data pipelines to shipped products.">
+<meta property="og:title" content="Dante Rodríguez Milán | Ingeniero de IA aplicada" data-i18n-attr="content:a1">
+<meta property="og:description" content="Ingeniero de IA aplicada con base en ingeniería de datos. Construyo sistemas de IA en producción de principio a fin, desde los pipelines de datos hasta los productos publicados." data-i18n-attr="content:a2">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dxnetft.github.io/dantes-portfolio/">
 <meta property="og:image" content="https://dxnetft.github.io/dantes-portfolio/assets/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
 <meta property="og:site_name" content="Dante Rodríguez Milán">
 <!-- Twitter/X card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Dante Rodríguez Milán | Applied AI Engineer">
-<meta name="twitter:description" content="Applied AI Engineer with a data engineering foundation. I build production AI systems end to end, from data pipelines to shipped products.">
+<meta name="twitter:title" content="Dante Rodríguez Milán | Ingeniero de IA aplicada" data-i18n-attr="content:a3">
+<meta name="twitter:description" content="Ingeniero de IA aplicada con base en ingeniería de datos. Construyo sistemas de IA en producción de principio a fin, desde los pipelines de datos hasta los productos publicados." data-i18n-attr="content:a4">
 <meta name="twitter:image" content="https://dxnetft.github.io/dantes-portfolio/assets/og-card.png">
+<link rel="alternate" hreflang="es" href="https://dxnetft.github.io/dantes-portfolio/">
+<link rel="alternate" hreflang="en" href="https://dxnetft.github.io/dantes-portfolio/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://dxnetft.github.io/dantes-portfolio/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Schibsted+Grotesk:wght@400..900&display=swap" rel="stylesheet">
@@ -37,6 +42,13 @@
      If the scripts never arrive, the timeout un-hides everything. */
   (function (r) {
     r.classList.add('js');
+    // Spanish is the page; English is applied by the script at the end of <body>
+    var q = /[?&]lang=(en|es)\b/.exec(location.search), saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    if ((q ? q[1] : saved) === 'en') {
+      r.lang = 'en'; r.classList.add('i18n-en');
+      setTimeout(function () { r.classList.remove('i18n-en'); }, 2000);
+    }
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       r.classList.add('motion', 'motion-wait');
       setTimeout(function () { r.classList.remove('motion-wait'); }, 1200);
@@ -99,6 +111,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .sec { padding-block: clamp(96px, 13vw, 200px); }
 .tnum { font-variant-numeric: tabular-nums; }
 
+.i18n-en body { visibility: hidden; }
+
 /* hide hero pieces until the intro timeline owns them */
 .motion-wait .hero-name, .motion-wait .card-stage { visibility: hidden; }
 
@@ -147,6 +161,12 @@ body.is-dark .nav-links a:hover { background: var(--petal); color: var(--bloom);
 .nav-avail { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; font-weight: 600; font-size: .92rem; }
 .nav-avail i { width: 9px; height: 9px; border-radius: 50%; background: #1FA463; box-shadow: 0 0 0 0 rgba(31,164,99,.5); animation: ping 2.2s infinite; }
 @keyframes ping { 70% { box-shadow: 0 0 0 9px rgba(31,164,99,0); } 100% { box-shadow: 0 0 0 0 rgba(31,164,99,0); } }
+.nav-end { display: flex; align-items: center; gap: 14px; }
+.lang { display: inline-flex; padding: 3px; border-radius: 999px; border: 1.5px solid var(--line); background: rgba(230,228,238,.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); transition: background-color .4s, border-color .4s; }
+body.is-dark .lang { background: rgba(20,9,15,.6); border-color: var(--line-d); }
+.lang button { min-width: 44px; min-height: 38px; padding: 0 .7rem; border: 0; border-radius: 999px; background: transparent; font-weight: 700; font-size: .82rem; letter-spacing: .04em; cursor: pointer; transition: background-color .3s, color .3s; }
+.lang button[aria-pressed=true] { background: var(--ink); color: var(--paper); }
+body.is-dark .lang button[aria-pressed=true] { background: var(--petal); color: var(--bloom); }
 .nav-menu { display: none; min-height: 44px; padding: 0 1.1rem; border-radius: 999px; border: 1.5px solid currentColor; background: transparent; font-weight: 650; cursor: pointer; }
 
 /* ---------- hero ---------- */
@@ -597,19 +617,19 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i18n="t0">Saltar al contenido</a>
 
 <header class="nav" id="nav">
   <a class="nav-mark" href="#top">Dante R. Milán</a>
-  <nav class="nav-links" id="nav-links" aria-label="Sections">
-    <a href="#suckura">Suckura</a>
-    <a href="#work">Work</a>
-    <a href="#experience">Experience</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a class="nav-avail" href="#contact"><i aria-hidden="true"></i>Open to work</a>
-  <button class="nav-menu" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+  <nav class="nav-links" id="nav-links" aria-label="Secciones" data-i18n="t1" data-i18n-attr="aria-label:a5"><a href="#suckura">Suckura</a> <a href="#work">Proyectos</a> <a href="#experience">Experiencia</a> <a href="#about">Sobre mí</a> <a href="#contact">Contacto</a></nav>
+  <div class="nav-end">
+    <a class="nav-avail" href="#contact" data-i18n="t2"><i aria-hidden="true"></i>Disponible para trabajar</a>
+    <div class="lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:a6">
+      <button type="button" data-lang="es" lang="es" aria-pressed="true" title="Español">ES</button>
+      <button type="button" data-lang="en" lang="en" aria-pressed="false" title="English">EN</button>
+    </div>
+    <button class="nav-menu" type="button" aria-expanded="false" aria-controls="nav-links" data-i18n="t3">Menú</button>
+  </div>
 </header>
 
 <main id="main">
@@ -618,48 +638,48 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 <section class="hero" id="top">
   <div class="hero-pin">
     <div class="hero-main">
-      <p class="hero-role" data-in><b>Applied AI Engineer</b> in Barcelona</p>
+      <p class="hero-role" data-in data-i18n="t4"><b>Ingeniero de IA aplicada</b> en Barcelona</p>
       <h1 class="hero-name" aria-label="Dante Rodríguez Milán">
         <span class="row" aria-hidden="true">Dante</span>
         <span class="row" aria-hidden="true">Rodríguez</span>
         <span class="row" aria-hidden="true">Milán</span>
       </h1>
       <div class="hero-foot">
-        <p class="hero-lede" data-in>I build production AI and data systems end to end, from the pipeline to the shipped product. Right now that means <a href="#suckura">Suckura™</a>, a One Piece TCG price tracker and cross-market arbitrage engine for European collectors. I'm building it solo, and it's in closed beta.</p>
+        <p class="hero-lede" data-in data-i18n="t5">Construyo sistemas de IA y de datos en producción de principio a fin, desde el pipeline hasta el producto publicado. Ahora mismo eso es <a href="#suckura">Suckura™</a>, una app de seguimiento de precios y un motor de arbitraje entre mercados de One Piece TCG para coleccionistas europeos. La estoy construyendo yo solo y está en beta cerrada.</p>
         <div class="btns" data-in>
-          <a class="btn btn-ink" href="#suckura">See Suckura
+          <a class="btn btn-ink" href="#suckura"><span data-i18n="t6">Ver Suckura</span>
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.8"/></svg></a>
-          <a class="btn btn-line" href="#contact">Get in touch</a>
+          <a class="btn btn-line" href="#contact" data-i18n="t7">Contacta conmigo</a>
         </div>
       </div>
     </div>
 
     <div class="card-stage">
-      <div class="pcard" role="button" tabindex="0" aria-label="Dante's player card. Turn it over to see the stats.">
+      <div class="pcard" role="button" tabindex="0" aria-label="Carta de jugador de Dante. Dale la vuelta para ver las estadísticas." data-i18n-attr="aria-label:a7">
         <span class="pcard-tilt">
           <span class="pcard-in">
             <span class="face front">
               <img class="pc-photo" src="assets/portrait.webp" alt="" width="800" height="1200">
               <span class="pc-shade"></span>
               <span class="pc-frame"></span>
-              <span class="pc-age" title="Age">23</span>
-              <span class="pc-id"><span class="pc-name">Dante Rodríguez Milán</span><span class="pc-role">Applied AI Engineer, Barcelona</span></span>
+              <span class="pc-age" title="Edad" data-i18n-attr="title:a8">23</span>
+              <span class="pc-id" data-i18n="t8"><span class="pc-name">Dante Rodríguez Milán</span><span class="pc-role">Ingeniero de IA aplicada, Barcelona</span></span>
               <span class="foil"></span><span class="glare"></span>
             </span>
             <span class="face back">
               <h2>Dante Rodríguez Milán<img src="assets/suckura/mark.webp" alt="" width="384" height="384"></h2>
               <dl>
-                <div><dt class="tnum">1,983</dt><dd>backend tests passing on Suckura</dd></div>
-                <div><dt class="tnum">1,166</dt><dd>commits since 29 April 2026</dd></div>
-                <div><dt class="tnum">9/10</dt><dd>B.Sc thesis, Data Engineering</dd></div>
+                <div><dt class="tnum" data-i18n="t9">1.983</dt><dd data-i18n="t10">tests de backend superados en Suckura</dd></div>
+                <div><dt class="tnum" data-i18n="t11">1.166</dt><dd data-i18n="t12">commits desde el 29 de abril de 2026</dd></div>
+                <div><dt class="tnum">9/10</dt><dd data-i18n="t13">TFG del grado en Ingeniería de Datos</dd></div>
               </dl>
-              <span class="pc-foot"><span>Founder of Suckura, closed beta</span><span>Barcelona</span></span>
+              <span class="pc-foot" data-i18n="t14"><span>Fundador de Suckura, en beta cerrada</span><span>Barcelona</span></span>
               <span class="foil"></span><span class="glare"></span>
             </span>
           </span>
         </span>
       </div>
-      <p class="card-hint" data-in><span class="t-ptr">Scroll, and the card turns over</span><span class="t-touch">Tap or click the card to turn it over</span></p>
+      <p class="card-hint" data-in data-i18n="t15"><span class="t-ptr">Desplázate y la carta se dará la vuelta</span><span class="t-touch">Toca o haz clic en la carta para darle la vuelta</span></p>
     </div>
   </div>
 </section>
@@ -675,119 +695,119 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
       <img class="bloom-seed" src="assets/suckura/mark.webp" alt="" width="384" height="384">
       <div class="bloom-copy">
         <img src="assets/suckura/wordmark-light.webp" alt="Suckura" width="592" height="93">
-        <h2 class="sk-h" id="sk-title">Card prices across markets, net of every fee.</h2>
-        <p>Lead project. I'm the founder, and the only engineer.</p>
+        <h2 class="sk-h" id="sk-title" data-i18n="t16">Precios de cartas entre mercados, con cada comisión descontada.</h2>
+        <p data-i18n="t17">Proyecto principal. Soy el fundador y el único ingeniero.</p>
       </div>
     </div>
   </section>
 
-  <section class="sk-sec" aria-label="About Suckura">
+  <section class="sk-sec" aria-label="Sobre Suckura" data-i18n-attr="aria-label:a9">
     <div class="wrap sk-intro">
       <div>
-        <p class="sk-p">Suckura tracks <b>One Piece TCG</b> prices across eBay, CardTrader and JustTCG, matches every printing of every card between their catalogues, and works out what a trade between two markets actually leaves you once commission, payment fees and postage are paid. It's built for European collectors first, and since October the app speaks Spanish first. I built every layer myself: the <b>FastAPI</b> backend on Render, the <b>React Native</b> app on Expo, and the landing site on Cloudflare Pages.</p>
+        <p class="sk-p" data-i18n="t18">Suckura sigue los precios de <b>One Piece TCG</b> en eBay, CardTrader y JustTCG, empareja cada versión de cada carta entre sus catálogos y calcula lo que de verdad te deja una operación entre dos mercados una vez pagadas la comisión, las comisiones de pago y el envío. Está pensada ante todo para coleccionistas europeos y, desde octubre, la app funciona en español por defecto. He construido cada capa yo mismo: el backend en <b>FastAPI</b> sobre Render, la app en <b>React Native</b> con Expo y la web en Cloudflare Pages.</p>
         <div class="btns" style="margin-top:2rem">
-          <a class="btn btn-coral" href="https://suckura.app" target="_blank" rel="noopener">Visit suckura.app
+          <a class="btn btn-coral" href="https://suckura.app" target="_blank" rel="noopener"><span data-i18n="t19">Visitar suckura.app</span>
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.8"/></svg></a>
-          <a class="btn btn-petal" href="#sk-film">Watch the beta film</a>
+          <a class="btn btn-petal" href="#sk-film" data-i18n="t20">Ver el vídeo de la beta</a>
         </div>
-        <ul class="chips" aria-label="Stack">
+        <ul class="chips" aria-label="Tecnologías" data-i18n-attr="aria-label:a10">
           <li>Python 3.12</li><li>FastAPI</li><li>SQLAlchemy</li><li>Redis</li><li>Supabase Postgres</li><li>OpenCV</li><li>React Native</li><li>Expo SDK 57</li><li>i18next</li><li>Cloudflare R2 + Pages</li><li>Render</li><li>GSAP</li>
         </ul>
       </div>
       <dl class="facts">
-        <div><dt>Status</dt><dd>Closed beta, invite-only Android</dd></div>
-        <div><dt>Started</dt><dd>29 Apr 2026</dd></div>
-        <div><dt>Commits</dt><dd>1,166</dd></div>
-        <div><dt>Backend tests</dt><dd>1,983 passing</dd></div>
-        <div><dt>Printings catalogued</dt><dd>6,950</dd></div>
-        <div><dt>Card images on R2</dt><dd>3,156+</dd></div>
-        <div><dt>App language</dt><dd>Spanish first, English</dd></div>
-        <div><dt>Card scan</dt><dd>On-device OCR</dd></div>
-        <div><dt>Lot appraisal, in testing</dt><dd>ORB + RANSAC matcher, 0 wrong picks</dd></div>
+        <div><dt data-i18n="t21">Estado</dt><dd data-i18n="t22">Beta cerrada, Android solo por invitación</dd></div>
+        <div><dt data-i18n="t23">Inicio</dt><dd data-i18n="t9001">29 abr. 2026</dd></div>
+        <div><dt>Commits</dt><dd data-i18n="t24">1.166</dd></div>
+        <div><dt data-i18n="t25">Tests de backend</dt><dd data-i18n="t26">1.983 superados</dd></div>
+        <div><dt data-i18n="t27">Versiones catalogadas</dt><dd data-i18n="t28">6.950</dd></div>
+        <div><dt data-i18n="t29">Imágenes de cartas en R2</dt><dd data-i18n="t30">3.156+</dd></div>
+        <div><dt data-i18n="t31">Idioma de la app</dt><dd data-i18n="t32">Español por defecto, inglés</dd></div>
+        <div><dt data-i18n="t33">Escaneo de cartas</dt><dd data-i18n="t34">OCR en el dispositivo</dd></div>
+        <div><dt data-i18n="t35">Tasación de lotes, en pruebas</dt><dd data-i18n="t36">Comparador ORB + RANSAC, 0 elecciones erróneas</dd></div>
       </dl>
     </div>
   </section>
 
   <section class="reel" aria-labelledby="reel-title">
     <div class="wrap reel-head">
-      <h3 class="sk-t" id="reel-title" data-split>Six screens, one idea: the most valuable number first</h3>
+      <h3 class="sk-t" id="reel-title" data-split data-i18n="t37">Seis pantallas, una idea: primero, la cifra más valiosa</h3>
       <p class="reel-count" aria-hidden="true"><b class="reel-i">01</b> / 06</p>
     </div>
     <div class="reel-track">
-      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-search.webp" alt="Suckura search screen listing Monkey D. Luffy printings with a price for each" width="960" height="540" loading="lazy"></div>
-        <figcaption><span>01</span><p><b>Search.</b> Every printing gets its own price.</p></figcaption></figure>
-      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-prices.webp" alt="Card detail showing CardTrader, Cardmarket and eBay prices in euros side by side" width="960" height="540" loading="lazy"></div>
-        <figcaption><span>02</span><p><b>Prices in euros.</b> Each market named, eBay marked as an ask.</p></figcaption></figure>
-      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-profit.webp" alt="Arbitrage screen with a fee breakdown ending in the net profit of a flip" width="960" height="540" loading="lazy"></div>
-        <figcaption><span>03</span><p><b>Arbitrage.</b> Profit after fees, itemised line by line.</p></figcaption></figure>
-      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-grade.webp" alt="Grading ROI screen comparing value per grade against grading cost" width="960" height="540" loading="lazy"></div>
-        <figcaption><span>04</span><p><b>Grading ROI.</b> Value per grade, with an honest confidence label.</p></figcaption></figure>
-      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-scan.webp" alt="Collection screen showing total value and a grid of owned cards" width="960" height="540" loading="lazy"></div>
-        <figcaption><span>05</span><p><b>Collection.</b> Point the camera at the card number to file it.</p></figcaption></figure>
-      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-alerts.webp" alt="A price alert push notification landing over the alerts list" width="960" height="540" loading="lazy"></div>
-        <figcaption><span>06</span><p><b>Alerts.</b> Set a target, get a push when it lands.</p></figcaption></figure>
+      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-search.webp" alt="Pantalla de búsqueda de Suckura con versiones de Monkey D. Luffy y un precio para cada una" width="960" height="540" loading="lazy" data-i18n-attr="alt:a11"></div>
+        <figcaption><span>01</span><p data-i18n="t38"><b>Búsqueda.</b> Cada versión tiene su propio precio.</p></figcaption></figure>
+      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-prices.webp" alt="Ficha de carta con los precios de CardTrader, Cardmarket y eBay en euros, uno al lado del otro" width="960" height="540" loading="lazy" data-i18n-attr="alt:a12"></div>
+        <figcaption><span>02</span><p data-i18n="t39"><b>Precios en euros.</b> Cada mercado con su nombre y eBay marcado como precio anunciado.</p></figcaption></figure>
+      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-profit.webp" alt="Pantalla de arbitraje con un desglose de comisiones que termina en el beneficio neto de una reventa" width="960" height="540" loading="lazy" data-i18n-attr="alt:a13"></div>
+        <figcaption><span>03</span><p data-i18n="t40"><b>Arbitraje.</b> Beneficio tras comisiones, desglosado línea a línea.</p></figcaption></figure>
+      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-grade.webp" alt="Pantalla de rentabilidad del gradeo que compara el valor por nota con el coste de gradear" width="960" height="540" loading="lazy" data-i18n-attr="alt:a14"></div>
+        <figcaption><span>04</span><p data-i18n="t41"><b>Rentabilidad del gradeo.</b> Valor por nota, con una etiqueta de confianza honesta.</p></figcaption></figure>
+      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-scan.webp" alt="Pantalla de colección con el valor total y una cuadrícula de las cartas que tienes" width="960" height="540" loading="lazy" data-i18n-attr="alt:a15"></div>
+        <figcaption><span>05</span><p data-i18n="t42"><b>Colección.</b> Apunta la cámara al número de la carta para guardarla.</p></figcaption></figure>
+      <figure class="still"><div class="still-frame"><img src="assets/suckura/reel-alerts.webp" alt="Una notificación de alerta de precio que aparece sobre la lista de alertas" width="960" height="540" loading="lazy" data-i18n-attr="alt:a16"></div>
+        <figcaption><span>06</span><p data-i18n="t43"><b>Alertas.</b> Fija un precio objetivo y recibe una notificación cuando se alcance.</p></figcaption></figure>
     </div>
-    <p class="wrap reel-note">Stills from the closed-beta film. Figures are illustrative.</p>
+    <p class="wrap reel-note" data-i18n="t44">Fotogramas del vídeo de la beta cerrada. Las cifras son ilustrativas.</p>
   </section>
 
   <section class="sk-sec" aria-labelledby="new-title">
     <div class="wrap">
-      <h3 class="sk-t" id="new-title" data-split>What shipped since the end of September</h3>
+      <h3 class="sk-t" id="new-title" data-split data-i18n="t45">Lo que ha salido desde finales de septiembre</h3>
       <div class="feat-grid">
         <div class="feats">
           <article class="feat">
-            <time>1 Oct</time>
-            <h4>The app speaks Spanish first</h4>
-            <p>Every screen translated into Spain Spanish, euros by default with <b>38,90 €</b> formatting, and pushes and server errors in the user's language. Android's Hermes engine has no <code>Intl.PluralRules</code>, so plurals are handled explicitly.</p>
-            <div class="fig"><strong>38,90 €</strong><span>Every screen in Spain Spanish, euros by default</span></div>
+            <time data-i18n="t46">1 oct.</time>
+            <h4 data-i18n="t47">La app, en español por defecto</h4>
+            <p data-i18n="t48">Cada pantalla traducida al español de España, euros por defecto con formato <b>38,90 €</b>, y notificaciones y errores del servidor en el idioma del usuario. El motor Hermes de Android no tiene <code>Intl.PluralRules</code>, así que los plurales se gestionan de forma explícita.</p>
+            <div class="fig" data-i18n="t49"><strong>38,90 €</strong><span>Cada pantalla en español de España, con euros por defecto</span></div>
           </article>
           <article class="feat">
-            <time>1 Oct</time>
-            <h4>Arbitrage inside Europe</h4>
-            <p>Buy on eBay Europe with shipping to Spain included and resell on CardTrader, or buy an underpriced CardTrader copy. All in euros, with zero JustTCG quota. eBay is never the sell side, because its prices are asks, not sales.</p>
-            <div class="fig"><strong>0</strong><span>JustTCG calls spent finding an EU trade</span></div>
+            <time data-i18n="t50">1 oct.</time>
+            <h4 data-i18n="t51">Arbitraje dentro de Europa</h4>
+            <p data-i18n="t52">Compra en eBay Europa con el envío a España incluido y revende en CardTrader, o compra una copia infravalorada en CardTrader. Todo en euros y sin gastar cuota de JustTCG. eBay nunca es el mercado de venta, porque sus precios son precios anunciados, no ventas.</p>
+            <div class="fig" data-i18n="t53"><strong>0</strong><span>llamadas a JustTCG para encontrar una operación dentro de la UE</span></div>
           </article>
           <article class="feat">
-            <time>2–4 Oct</time>
-            <h4>Tournaments and the meta</h4>
-            <p>Every Limitless-hosted One Piece event with 16 or more players: leader share, win rate, share change, priced decklists showing the cards you own and the cost to complete, and the most-played cards per leader. The old ingest had been stuck on one organiser whose last event was in February 2025.</p>
-            <div class="fig"><strong>88</strong><span>events and 3,931 standings on the first run</span></div>
+            <time data-i18n="t54">2–4 oct.</time>
+            <h4 data-i18n="t55">Torneos y meta</h4>
+            <p data-i18n="t56">Cada evento de One Piece alojado en Limitless con 16 jugadores o más: presencia de cada líder, porcentaje de victorias, variación de presencia, listas de mazos con precio que muestran las cartas que ya tienes y lo que cuesta completarlas, y las cartas más jugadas por líder. La ingesta anterior se había quedado atascada en un organizador cuyo último evento fue en febrero de 2025.</p>
+            <div class="fig" data-i18n="t57"><strong>88</strong><span>eventos y 3.931 puestos de clasificación en la primera ejecución</span></div>
           </article>
           <article class="feat">
-            <time>3–8 Oct</time>
-            <h4>A deck builder that knows your binder</h4>
-            <p>Save or copy a tournament deck, price it, see what you already own, and mark missing cards as bought. Buying adds them to the collection ledger.</p>
-            <div class="fig word"><strong>Deck to ledger</strong><span>Missing cards marked as bought go straight into the collection</span></div>
+            <time data-i18n="t58">3–8 oct.</time>
+            <h4 data-i18n="t59">Un constructor de mazos que conoce tu carpeta</h4>
+            <p data-i18n="t60">Guarda o copia un mazo de torneo, ponle precio, mira lo que ya tienes y marca como compradas las cartas que faltan. Al comprarlas se añaden al registro de la colección.</p>
+            <div class="fig word" data-i18n="t61"><strong>Del mazo al registro</strong><span>Las cartas que faltan, al marcarlas como compradas, pasan directamente a la colección</span></div>
           </article>
           <article class="feat">
-            <time>5–7 Oct</time>
-            <h4>News, badges and an admin view</h4>
-            <p>An update feed with consent-masked tester credits and official Bandai news from a 12-hour poller. Nine badge rules evaluated on the server from data it already has. An admin dashboard for API quota per provider, users, feature use and job health. And an in-app prompt, because over-the-air updates were silently skipping testers on an older native build.</p>
-            <div class="fig"><strong>9</strong><span>badge rules, evaluated server-side with zero API calls</span></div>
+            <time data-i18n="t62">5–7 oct.</time>
+            <h4 data-i18n="t63">Noticias, insignias y un panel de administración</h4>
+            <p data-i18n="t64">Un feed de novedades con créditos a los testers, ocultos según su consentimiento, y noticias oficiales de Bandai consultadas cada 12 horas. Nueve reglas de insignias evaluadas en el servidor con datos que ya tiene. Un panel de administración con la cuota de API por proveedor, los usuarios, el uso de cada función y el estado de los procesos. Y un aviso dentro de la app, porque las actualizaciones over-the-air se saltaban en silencio a los testers con una versión nativa antigua.</p>
+            <div class="fig" data-i18n="t65"><strong>9</strong><span>reglas de insignias, evaluadas en el servidor sin ninguna llamada a API</span></div>
           </article>
           <article class="feat">
-            <time>9–11 Oct</time>
-            <h4>Where a card comes from</h4>
-            <p>Which sealed products a card is pulled from, the pull odds, and box expected value against box price. Every odds range cites a page that states it today. When the chase cards have no sourced odds, the expected value is withheld, with the reason shown.</p>
-            <div class="fig word"><strong>Withheld</strong><span>Box EV, once unsourced cards hold over 10% of the possible value</span></div>
+            <time data-i18n="t66">9–11 oct.</time>
+            <h4 data-i18n="t67">De dónde sale una carta</h4>
+            <p data-i18n="t68">Qué productos sellados contienen una carta, la probabilidad de que salga y el valor esperado de una caja frente a su precio. Cada rango de probabilidades cita una página que lo indica hoy. Cuando las cartas más buscadas no tienen probabilidades con fuente, el valor esperado no se muestra y se explica el motivo.</p>
+            <div class="fig word" data-i18n="t69"><strong>Oculto</strong><span>El valor esperado de la caja, cuando las cartas sin fuente suponen más del 10 % del valor posible</span></div>
           </article>
           <article class="feat">
-            <time>11–13 Oct</time>
-            <h4>Cardmarket, one tap away</h4>
-            <p>Every printing links to its exact Cardmarket page and opens it in an in-app browser. Prices come from Cardmarket's public daily Price Guide and stay admin-only until licensing is agreed. Outreach has been sent.</p>
-            <div class="fig"><strong>13,384</strong><span>One Piece products in Cardmarket's daily Price Guide</span></div>
+            <time data-i18n="t70">11–13 oct.</time>
+            <h4 data-i18n="t71">Cardmarket, a un toque</h4>
+            <p data-i18n="t72">Cada versión enlaza a su página exacta de Cardmarket y la abre en un navegador dentro de la app. Los precios salen de la Price Guide diaria y pública de Cardmarket y solo los ve el administrador hasta que se acuerde la licencia. Ya les he escrito.</p>
+            <div class="fig" data-i18n="t73"><strong>13.384</strong><span>productos de One Piece en la Price Guide diaria de Cardmarket</span></div>
           </article>
           <article class="feat">
-            <time>16 Oct</time>
-            <h4>Prices by language</h4>
-            <p>English, Japanese, Chinese and Korean prices per printing, a language switch on card detail, and search and collection valued per language. Never a zero, and never another language's price standing in.</p>
-            <div class="fig word"><strong>EN JA ZH KO</strong><span>Four prices per printing, never borrowed from each other</span></div>
+            <time data-i18n="t74">16 oct.</time>
+            <h4 data-i18n="t75">Precios por idioma</h4>
+            <p data-i18n="t76">Precios en inglés, japonés, chino y coreano para cada versión, un selector de idioma en la ficha de la carta, y búsqueda y colección valoradas por idioma. Nunca un cero, y nunca el precio de otro idioma en su lugar.</p>
+            <div class="fig word" data-i18n="t77"><strong>EN JA ZH KO</strong><span>Cuatro precios por versión, sin tomar prestado el de otro idioma</span></div>
           </article>
           <article class="feat">
-            <time>12–16 Oct</time><span class="tag">In testing</span>
-            <h4>Appraise a whole lot from photos</h4>
-            <p>Scan a stack of cards and get a total and a buy offer. OCR reads the card number, then an <b>ORB + RANSAC</b> artwork matcher in OpenCV decides which printing of that number the photo shows. It also reads Pokémon footers and Japanese One Piece cards, alongside a Pokémon catalogue imported from TCGdex. It's waiting on a real shop test.</p>
-            <div class="fig"><strong>0</strong><span>wrong auto-picks in the benchmark, at three degradation severities</span></div>
+            <time data-i18n="t78">12–16 oct.</time><span class="tag" data-i18n="t79">En pruebas</span>
+            <h4 data-i18n="t80">Tasa un lote entero con fotos</h4>
+            <p data-i18n="t81">Escanea un taco de cartas y obtén un total y una oferta de compra. El OCR lee el número de la carta y después un comparador de ilustraciones <b>ORB + RANSAC</b> en OpenCV decide qué versión de ese número aparece en la foto. También lee el pie de las cartas Pokémon y las cartas japonesas de One Piece, junto a un catálogo de Pokémon importado de TCGdex. Está pendiente de una prueba real en una tienda.</p>
+            <div class="fig" data-i18n="t82"><strong>0</strong><span>elecciones automáticas erróneas en el benchmark, con tres niveles de degradación</span></div>
           </article>
         </div>
         <div class="feat-panel" aria-hidden="true"></div>
@@ -797,19 +817,19 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 
   <section class="sk-sec" id="sk-film" aria-labelledby="film-title" style="padding-top:0">
     <div class="wrap">
-      <h3 class="sk-t" id="film-title" data-split>The closed-beta film</h3>
+      <h3 class="sk-t" id="film-title" data-split data-i18n="t83">El vídeo de la beta cerrada</h3>
       <div class="film-frame">
         <video id="film" preload="none" playsinline poster="assets/suckura/film-poster.webp">
           <source src="assets/suckura/film.mp4" type="video/mp4">
         </video>
-        <button class="film-play" type="button" aria-label="Play the beta film with sound">
+        <button class="film-play" type="button" aria-label="Reproducir el vídeo de la beta con sonido" data-i18n-attr="aria-label:a17">
           <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18l16-9z"/></svg></i>
-          <span>Play, with sound</span>
+          <span data-i18n="t84">Reproducir, con sonido</span>
         </button>
       </div>
       <div class="film-meta">
-        <p>The launch film for the closed beta, cut from the real app screens. The card art is abstract and the figures are illustrative, as the end card says.</p>
-        <p>On suckura.app it runs in English and Spanish, on a landing page kept to 31 KB gzipped that makes no third-party requests.</p>
+        <p data-i18n="t85">El vídeo de lanzamiento de la beta cerrada, montado con pantallas reales de la app. Las ilustraciones de las cartas son abstractas y las cifras son ilustrativas, como indica el plano final.</p>
+        <p data-i18n="t86">En suckura.app se puede ver en inglés y en español, en una landing de solo 31 KB comprimida con gzip que no hace ninguna petición a terceros.</p>
       </div>
     </div>
   </section>
@@ -817,11 +837,11 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
   <section class="sk-sec" aria-labelledby="hub-title" style="padding-top:0">
     <div class="wrap hub">
       <div>
-        <h3 class="sk-t" id="hub-title" data-split>One hub every price passes through</h3>
-        <p class="sk-p" style="margin-top:1.4rem">Search, arbitrage, alerts and grading all read prices through a single aggregator, so a change there ripples into all four at once. Each source client has a mock mode, a circuit breaker and a rate limiter, and fails closed when its quota runs out.</p>
+        <h3 class="sk-t" id="hub-title" data-split data-i18n="t87">Un único punto por el que pasa cada precio</h3>
+        <p class="sk-p" style="margin-top:1.4rem" data-i18n="t88">La búsqueda, el arbitraje, las alertas y el gradeo leen los precios a través de un único agregador, así que un cambio ahí se propaga a los cuatro a la vez. Cada cliente de datos tiene un modo simulado, un circuit breaker y un limitador de peticiones, y falla en modo cerrado cuando agota su cuota.</p>
       </div>
       <div>
-        <svg class="hub-svg d" viewBox="0 0 1000 440" role="img" aria-label="Three price sources, eBay, CardTrader and JustTCG, feed one price aggregator, which serves search, arbitrage, alerts and grading ROI.">
+        <svg class="hub-svg d" viewBox="0 0 1000 440" role="img" aria-label="Tres fuentes de precios, eBay, CardTrader y JustTCG, alimentan un único agregador de precios, que da servicio a la búsqueda, el arbitraje, las alertas y la rentabilidad del gradeo." data-i18n-attr="aria-label:a18">
           <defs><radialGradient id="hubgrad" cx="35%" cy="30%"><stop offset="0" stop-color="#EF93B4"/><stop offset=".6" stop-color="#C2557A"/><stop offset="1" stop-color="#83274E"/></radialGradient></defs>
           <g>
             <path class="wire" pathLength="1" d="M210 90 C330 90 370 220 416 220"/>
@@ -839,14 +859,14 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
             <path class="pulse out" pathLength="1" d="M584 220 C650 220 700 270 790 270" style="animation-delay:-2s"/>
             <path class="pulse out" pathLength="1" d="M584 220 C650 220 700 370 790 370" style="animation-delay:-.2s"/>
           </g>
-          <g class="node"><rect x="20" y="60" width="190" height="60" rx="12"/><text class="t" x="40" y="86">eBay</text><text class="s" x="40" y="105">asks, never sales</text></g>
-          <g class="node"><rect x="20" y="190" width="190" height="60" rx="12"/><text class="t" x="40" y="216">CardTrader</text><text class="s" x="40" y="235">EU marketplace, euros</text></g>
-          <g class="node"><rect x="20" y="320" width="190" height="60" rx="12"/><text class="t" x="40" y="346">JustTCG</text><text class="s" x="40" y="365">1,000 calls a month</text></g>
-          <g class="node core"><circle class="hub-ring" cx="500" cy="220" r="104"/><circle class="hub-core" cx="500" cy="220" r="84"/><text class="t" x="500" y="214" text-anchor="middle" style="fill:#14090F">Price</text><text class="t" x="500" y="236" text-anchor="middle" style="fill:#14090F">aggregator</text></g>
-          <g class="node"><rect x="790" y="44" width="190" height="52" rx="12"/><text class="t" x="810" y="76">Search</text></g>
-          <g class="node"><rect x="790" y="144" width="190" height="52" rx="12"/><text class="t" x="810" y="176">Arbitrage</text></g>
-          <g class="node"><rect x="790" y="244" width="190" height="52" rx="12"/><text class="t" x="810" y="276">Alerts</text></g>
-          <g class="node"><rect x="790" y="344" width="190" height="52" rx="12"/><text class="t" x="810" y="376">Grading ROI</text></g>
+          <g class="node"><rect x="20" y="60" width="190" height="60" rx="12"/><text class="t" x="40" y="86">eBay</text><text class="s" x="40" y="105" data-i18n="t89">anuncios, no ventas</text></g>
+          <g class="node"><rect x="20" y="190" width="190" height="60" rx="12"/><text class="t" x="40" y="216">CardTrader</text><text class="s" x="40" y="235" data-i18n="t90">mercado de la UE, en euros</text></g>
+          <g class="node"><rect x="20" y="320" width="190" height="60" rx="12"/><text class="t" x="40" y="346">JustTCG</text><text class="s" x="40" y="365" data-i18n="t91">1.000 llamadas al mes</text></g>
+          <g class="node core"><circle class="hub-ring" cx="500" cy="220" r="104"/><circle class="hub-core" cx="500" cy="220" r="84"/><text class="t" x="500" y="214" text-anchor="middle" style="fill:#14090F" data-i18n="t92">Agregador</text><text class="t" x="500" y="236" text-anchor="middle" style="fill:#14090F" data-i18n="t93">de precios</text></g>
+          <g class="node"><rect x="790" y="44" width="190" height="52" rx="12"/><text class="t" x="810" y="76" data-i18n="t94">Búsqueda</text></g>
+          <g class="node"><rect x="790" y="144" width="190" height="52" rx="12"/><text class="t" x="810" y="176" data-i18n="t95">Arbitraje</text></g>
+          <g class="node"><rect x="790" y="244" width="190" height="52" rx="12"/><text class="t" x="810" y="276" data-i18n="t96">Alertas</text></g>
+          <g class="node"><rect x="790" y="344" width="190" height="52" rx="12"/><text class="t" x="810" y="376" data-i18n="t97">ROI del gradeo</text></g>
         </svg>
         <svg class="hub-svg m" viewBox="0 0 360 540" aria-hidden="true">
           <defs><radialGradient id="hubgrad-m" cx="35%" cy="30%"><stop offset="0" stop-color="#EF93B4"/><stop offset=".6" stop-color="#C2557A"/><stop offset="1" stop-color="#83274E"/></radialGradient></defs>
@@ -869,11 +889,11 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
           <g class="node"><rect x="6" y="20" width="108" height="56" rx="12"/><text class="t" x="60" y="54" text-anchor="middle" style="font-size:15px">eBay</text></g>
           <g class="node"><rect x="126" y="20" width="108" height="56" rx="12"/><text class="t" x="180" y="54" text-anchor="middle" style="font-size:15px">CardTrader</text></g>
           <g class="node"><rect x="246" y="20" width="108" height="56" rx="12"/><text class="t" x="300" y="54" text-anchor="middle" style="font-size:15px">JustTCG</text></g>
-          <g class="node core"><circle class="hub-ring" cx="180" cy="270" r="82"/><circle class="hub-core" cx="180" cy="270" r="68" style="fill:url(#hubgrad-m)"/><text class="t" x="180" y="265" text-anchor="middle" style="fill:#14090F;font-size:16px">Price</text><text class="t" x="180" y="285" text-anchor="middle" style="fill:#14090F;font-size:16px">aggregator</text></g>
-          <g class="node"><rect x="0" y="460" width="84" height="52" rx="12"/><text class="t" x="42" y="491" text-anchor="middle" style="font-size:13px">Search</text></g>
-          <g class="node"><rect x="92" y="460" width="84" height="52" rx="12"/><text class="t" x="134" y="491" text-anchor="middle" style="font-size:13px">Arbitrage</text></g>
-          <g class="node"><rect x="184" y="460" width="84" height="52" rx="12"/><text class="t" x="226" y="491" text-anchor="middle" style="font-size:13px">Alerts</text></g>
-          <g class="node"><rect x="276" y="460" width="84" height="52" rx="12"/><text class="t" x="318" y="491" text-anchor="middle" style="font-size:13px">Grading</text></g>
+          <g class="node core"><circle class="hub-ring" cx="180" cy="270" r="82"/><circle class="hub-core" cx="180" cy="270" r="68" style="fill:url(#hubgrad-m)"/><text class="t" x="180" y="265" text-anchor="middle" style="fill:#14090F;font-size:16px" data-i18n="t98">Agregador</text><text class="t" x="180" y="285" text-anchor="middle" style="fill:#14090F;font-size:16px" data-i18n="t99">de precios</text></g>
+          <g class="node"><rect x="0" y="460" width="84" height="52" rx="12"/><text class="t" x="42" y="491" text-anchor="middle" style="font-size:13px" data-i18n="t100">Búsqueda</text></g>
+          <g class="node"><rect x="92" y="460" width="84" height="52" rx="12"/><text class="t" x="134" y="491" text-anchor="middle" style="font-size:13px" data-i18n="t101">Arbitraje</text></g>
+          <g class="node"><rect x="184" y="460" width="84" height="52" rx="12"/><text class="t" x="226" y="491" text-anchor="middle" style="font-size:13px" data-i18n="t102">Alertas</text></g>
+          <g class="node"><rect x="276" y="460" width="84" height="52" rx="12"/><text class="t" x="318" y="491" text-anchor="middle" style="font-size:13px" data-i18n="t103">Gradeo</text></g>
         </svg>
       </div>
     </div>
@@ -882,12 +902,12 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
   <section class="sk-sec" aria-labelledby="fee-title" style="padding-top:0">
     <div class="wrap fee">
       <div>
-        <p class="fee-kicker">Fee math</p>
-        <h3 class="sk-t" id="fee-title" data-split>What a sale actually leaves you</h3>
-        <p class="sk-p" style="margin-top:1.4rem">The arbitrage engine never compares raw price gaps. Every trade is netted of the selling marketplace's <b>commission</b>, <b>payment fee</b> and <b>postage</b> before it counts as an opportunity. That's what kills most of the "deals" a naive price diff finds.</p>
-        <p class="sk-p">This receipt runs the engine's Cardmarket defaults: 5% commission, 3% payment fee and €1.50 postage. Drag the price down and watch the fixed postage eat a cheap card.</p>
+        <p class="fee-kicker" data-i18n="t104">Cálculo de comisiones</p>
+        <h3 class="sk-t" id="fee-title" data-split data-i18n="t105">Lo que de verdad te deja una venta</h3>
+        <p class="sk-p" style="margin-top:1.4rem" data-i18n="t106">El motor de arbitraje nunca compara diferencias de precio en bruto. A cada operación se le descuentan la <b>comisión</b>, la <b>comisión de pago</b> y el <b>envío</b> del mercado donde se vende antes de contarla como oportunidad. Eso es lo que tumba la mayoría de los «chollos» que encuentra una simple diferencia de precios.</p>
+        <p class="sk-p" data-i18n="t107">Este recibo usa los valores por defecto del motor para Cardmarket: 5 % de comisión, 3 % de comisión de pago y 1,50 € de envío. Baja el precio y mira cómo el envío fijo se come una carta barata.</p>
         <div class="slider">
-          <label for="price">Sale price <output id="price-out">€22.00</output></label>
+          <label for="price" data-i18n="t108">Precio de venta <output id="price-out">22,00 €</output></label>
           <input type="range" id="price" min="2" max="120" step="1" value="22">
         </div>
       </div>
@@ -895,19 +915,19 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
         <div class="receipt" id="receipt" aria-live="polite">
           <div class="rc-head">
             <img src="assets/suckura/mark.webp" alt="" width="384" height="384" loading="lazy">
-            <b>ONE SALE, ITEMISED</b>
-            <span>european marketplace · private seller</span>
+            <b data-i18n="t109">UNA VENTA, DESGLOSADA</b>
+            <span data-i18n="t110">mercado europeo · vendedor particular</span>
           </div>
           <ul class="rc-lines">
-            <li><span>Sale price</span><span id="rc-sale">€22.00</span></li>
-            <li class="neg"><span>Commission 5%</span><span id="rc-com">−€1.10</span></li>
-            <li class="neg"><span>Payment fee 3%</span><span id="rc-pay">−€0.66</span></li>
-            <li class="neg"><span>Postage</span><span id="rc-post">−€1.50</span></li>
+            <li data-i18n="t111"><span>Precio de venta</span><span id="rc-sale">22,00 €</span></li>
+            <li class="neg" data-i18n="t112"><span>Comisión 5 %</span><span id="rc-com">−1,10 €</span></li>
+            <li class="neg" data-i18n="t113"><span>Comisión de pago 3 %</span><span id="rc-pay">−0,66 €</span></li>
+            <li class="neg" data-i18n="t114"><span>Envío</span><span id="rc-post">−1,50 €</span></li>
           </ul>
-          <div class="rc-total"><span>YOU KEEP</span><b id="rc-net">€18.74</b></div>
+          <div class="rc-total" data-i18n="t115"><span>TE QUEDAS</span><b id="rc-net">18,74 €</b></div>
           <div class="rc-bar"><i id="rc-bar" style="width:85.2%"></i></div>
-          <div class="rc-foot"><span>kept <span id="rc-kept">85.2%</span></span><span>gone <span id="rc-gone">14.8%</span></span></div>
-          <p class="rc-note">An illustration, not a quote. Real rates vary with the marketplace, seller tier and country.</p>
+          <div class="rc-foot" data-i18n="t116"><span>te quedas <span id="rc-kept">85,2 %</span></span><span>se va <span id="rc-gone">14,8 %</span></span></div>
+          <p class="rc-note" data-i18n="t117">Una ilustración, no un presupuesto. Las tarifas reales varían según el mercado, el nivel del vendedor y el país.</p>
         </div>
       </div>
     </div>
@@ -916,94 +936,89 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
   <section class="sk-sec" aria-labelledby="cases-title" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head" style="margin-bottom:0">
-        <h3 class="sk-t" id="cases-title" data-split>Three problems worth the write-up</h3>
-        <p class="sk-p" style="margin:0">Straight out of the project's lessons log. Every number below is measured, and most of them came from a bug I had to find first.</p>
+        <h3 class="sk-t" id="cases-title" data-split data-i18n="t118">Tres problemas que merece la pena contar</h3>
+        <p class="sk-p" style="margin:0" data-i18n="t119">Sacados directamente del registro de lecciones del proyecto. Cada cifra de abajo está medida, y la mayoría salió de un bug que primero tuve que encontrar.</p>
       </div>
       <div class="cases">
         <article class="case" style="--i:0">
           <div>
-            <p class="case-tag">API quota budget</p>
-            <h4>Running a price app on a thousand calls a month</h4>
-            <p>The main catalogue API's free tier is <b>1,000 calls a month</b>. The monthly cap binds before the daily one, so the real sustained budget is about <b>33 calls a day</b>. That one number sets the 15-minute cache, the hourly alert check, the lazy-loaded tabs and the rate limiter.</p>
-            <p>Card-number and set-code searches now run against a <b>local catalogue of 2,495 cards</b>, imported from image filenames at zero API cost, so a typo can't drain the month. When I needed to know whether a batch of ids costs one call or twenty, I measured it with three balance readings instead of guessing.</p>
-            <p>The same readings turned up <b>880 of 1,000</b> calls already spent. A background sweep had been running at six times its default budget and stopped itself quietly at its safety floor. Nothing errored and nothing logged. It showed up only in the balance.</p>
-            <div class="lesson"><small>Lesson logged</small><q>A documented call cost is not a measured one: trace the path.</q></div>
+            <p class="case-tag" data-i18n="t120">Presupuesto de cuota de API</p>
+            <h4 data-i18n="t121">Una app de precios con mil llamadas al mes</h4>
+            <p data-i18n="t122">El plan gratuito de la API principal de catálogo es de <b>1.000 llamadas al mes</b>. El límite mensual se alcanza antes que el diario, así que el presupuesto sostenible real es de unas <b>33 llamadas al día</b>. Esa única cifra determina la caché de 15 minutos, la comprobación de alertas cada hora, las pestañas con carga diferida y el limitador de peticiones.</p>
+            <p data-i18n="t123">Las búsquedas por número de carta y código de set se resuelven ahora contra un <b>catálogo local de 2.495 cartas</b>, importado a partir de los nombres de archivo de las imágenes sin coste de API, para que una errata no pueda vaciar el mes. Cuando necesité saber si un lote de ids cuesta una llamada o veinte, lo medí con tres lecturas del saldo en lugar de suponerlo.</p>
+            <p data-i18n="t124">Esas mismas lecturas destaparon <b>880 de 1.000</b> llamadas ya gastadas. Un barrido en segundo plano había estado funcionando con seis veces su presupuesto por defecto y se había detenido en silencio al llegar a su umbral de seguridad. Nada dio error y nada quedó en los logs. Solo se veía en el saldo.</p>
+            <div class="lesson" data-i18n="t125"><small>Lección registrada</small><q>El coste documentado de una llamada no es un coste medido: rastrea el recorrido.</q></div>
           </div>
           <div class="vis">
             <div>
-              <p class="vis-label">Monthly budget, JustTCG free tier</p>
-              <div class="vis-big tnum">1,000</div>
-              <p class="vis-sub">calls a month, divided by 30 days, is about 33 a day</p>
+              <p class="vis-label" data-i18n="t126">Presupuesto mensual, plan gratuito de JustTCG</p>
+              <div class="vis-big tnum" data-i18n="t127">1.000</div>
+              <p class="vis-sub" data-i18n="t128">llamadas al mes entre 30 días son unas 33 al día</p>
               <div class="days" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <div class="days-ends"><span>day 1</span><span>about 33 calls each</span><span>day 30</span></div>
+              <div class="days-ends" data-i18n="t129"><span>día 1</span><span>unas 33 llamadas cada uno</span><span>día 30</span></div>
             </div>
             <div>
-              <p class="vis-label">Measuring a batch with balance readings</p>
+              <p class="vis-label" data-i18n="t130">Midiendo un lote con lecturas del saldo</p>
               <div class="readings">
-                <div><b>118</b><small>reading 1</small></div>
-                <div class="d">−1<small>the reading</small></div>
-                <div><b>117</b><small>reading 2</small></div>
-                <div class="d">−2<small>reading + batch</small></div>
-                <div><b>115</b><small>reading 3</small></div>
+                <div data-i18n="t131"><b>118</b><small>lectura 1</small></div>
+                <div class="d" data-i18n="t132">−1<small>la lectura</small></div>
+                <div data-i18n="t133"><b>117</b><small>lectura 2</small></div>
+                <div class="d" data-i18n="t134">−2<small>lectura + lote</small></div>
+                <div data-i18n="t135"><b>115</b><small>lectura 3</small></div>
               </div>
-              <p class="vis-sub" style="margin-top:1rem">A batch of up to 20 ids <b>bills as one request</b>. Ten calls a day re-price up to 200 printings, not 10.</p>
+              <p class="vis-sub" style="margin-top:1rem" data-i18n="t136">Un lote de hasta 20 ids <b>se factura como una sola petición</b>. Diez llamadas al día actualizan el precio de hasta 200 versiones, no de 10.</p>
             </div>
           </div>
         </article>
 
         <article class="case" style="--i:1">
           <div>
-            <p class="case-tag">Price-data integrity</p>
-            <h4>The 1,594% return that wasn't there</h4>
-            <p>A Quick Scan on Dracule Mihawk OP01-070 said: buy raw at $1.06, grade it, sell the PSA 10 at $949.95, a <b>1594.83% return</b>. Re-running with grading switched off returned <b>zero</b> opportunities. The grading path was producing every result the feature had, and all of them were false.</p>
-            <p>The comp filter could prove a premium marker was <b>present</b> in a listing title but never that it was <b>absent</b>, so every premium printing sharing the card number counted as a comp. Adding keywords made it worse, because tournament-prize cards carry no marker at all. The fix classifies which printing a title names in both directions, then makes the comp pool <b>agree with itself</b> or return nothing.</p>
-            <p>All three flagged cards now refuse, each for a different reason (spread 10.0×, 2 comps, spread 4.7×). <b>7 of 10</b> surveyed cards still produce a coherent pool, clustering at 1.1–2.0× spread, which is where the 4× threshold comes from.</p>
-            <div class="lesson"><small>Lesson logged</small><q>A guard that can only prove presence is not a guard.</q></div>
+            <p class="case-tag" data-i18n="t137">Integridad de los datos de precios</p>
+            <h4 data-i18n="t138">La rentabilidad del 1.594 % que no existía</h4>
+            <p data-i18n="t139">Un Quick Scan de Dracule Mihawk OP01-070 decía: compra la carta sin gradear a 1,06 $, gradéala y vende el PSA 10 a 949,95 $, una <b>rentabilidad del 1.594,83 %</b>. Al repetirlo con el gradeo desactivado, salían <b>cero</b> oportunidades. La vía del gradeo producía todos los resultados que tenía la función, y todos eran falsos.</p>
+            <p data-i18n="t140">El filtro de comparables podía demostrar que un marcador de versión premium estaba <b>presente</b> en el título de un anuncio, pero nunca que estuviera <b>ausente</b>, así que cada versión premium que compartía número de carta contaba como comparable. Añadir palabras clave lo empeoraba, porque las cartas de premio de torneo no llevan ningún marcador. El arreglo clasifica en ambos sentidos qué versión nombra un título y después obliga a que el conjunto de comparables <b>sea coherente consigo mismo</b> o no devuelva nada.</p>
+            <p data-i18n="t141">Las tres cartas señaladas ya no devuelven resultado, cada una por un motivo distinto (dispersión de 10,0×, 2 comparables, dispersión de 4,7×). <b>7 de 10</b> cartas analizadas siguen formando un conjunto coherente, agrupado entre 1,1 y 2,0× de dispersión, que es de donde sale el umbral de 4×.</p>
+            <div class="lesson" data-i18n="t142"><small>Lección registrada</small><q>Una salvaguarda que solo puede demostrar presencia no es una salvaguarda.</q></div>
           </div>
           <div class="vis">
             <div class="scan">
-              <header><span>Quick Scan, before the fix</span><span>OP01-070</span></header>
-              <div><span>Buy raw</span><b>$1.06</b></div>
-              <div><span>Sell as PSA 10</span><b>$949.95</b></div>
-              <div class="ret"><span>Reported return</span><s>1594.83%</s></div>
-              <span class="stamp">Fabricated</span>
+              <header data-i18n="t143"><span>Quick Scan, antes del arreglo</span><span>OP01-070</span></header>
+              <div data-i18n="t144"><span>Compra sin gradear</span><b>1,06 $</b></div>
+              <div data-i18n="t145"><span>Venta como PSA 10</span><b>949,95 $</b></div>
+              <div class="ret" data-i18n="t146"><span>Rentabilidad indicada</span><s>1.594,83 %</s></div>
+              <span class="stamp" data-i18n="t147">Inventada</span>
             </div>
             <ol class="guards">
-              <li>At least 3 comps in the pool</li>
-              <li>p90 / p10 spread under 4×</li>
-              <li>Graded-to-raw multiple under 50×</li>
+              <li data-i18n="t148">Al menos 3 comparables en el conjunto</li>
+              <li data-i18n="t149">Dispersión p90 / p10 por debajo de 4×</li>
+              <li data-i18n="t150">Múltiplo gradeada / sin gradear por debajo de 50×</li>
             </ol>
-            <div class="zero"><b>0</b><span>opportunities after the guards. The scan returns nothing rather than a number.</span></div>
-            <div class="zero"><b>7/10</b><span>surveyed cards still form a coherent comp pool, at 1.1–2.0× spread.</span></div>
+            <div class="zero" data-i18n="t151"><b>0</b><span>oportunidades tras las salvaguardas. El escaneo prefiere no devolver nada antes que una cifra.</span></div>
+            <div class="zero" data-i18n="t152"><b>7/10</b><span>cartas analizadas siguen formando un conjunto de comparables coherente, con una dispersión de 1,1–2,0×.</span></div>
           </div>
         </article>
 
         <article class="case" style="--i:2">
           <div>
-            <p class="case-tag">Cross-market matching</p>
-            <h4>Every printing, its own Cardmarket page</h4>
-            <p>A Parallel and its base card share a card number but not a price, so every printing needs its own link. The first importer scored <b>152 of 156</b> on the dev database and <b>2,316 of 6,950</b> in production. Dev held a single set, the one set where the rule's assumption happened to hold.</p>
-            <p>That assumption was that a card number's prefix names its set. It doesn't: premium boosters file cards under the original set's number, promos live in four differently coded expansions, and two catalogues spell the same release differently. Blueprints are now indexed by their own collector prefix across all <b>99 expansions</b>, and the set name scores the candidates instead of gating one, with <b>zero unresolvable ties</b>.</p>
-            <p>By the evening it was <b>5,688 of 6,950</b> linked, 85% of every printing that has a card number. What's left is left on purpose, because a card we can't place keeps a search link rather than a wrong one.</p>
-            <div class="lesson"><small>Lesson logged</small><q>Measure a catalogue rule on the catalogue, not on the dev database.</q></div>
+            <p class="case-tag" data-i18n="t153">Emparejamiento entre mercados</p>
+            <h4 data-i18n="t154">Cada versión, con su propia página de Cardmarket</h4>
+            <p data-i18n="t155">Una Parallel y su carta base comparten número de carta pero no precio, así que cada versión necesita su propio enlace. El primer importador acertó <b>152 de 156</b> en la base de datos de desarrollo y <b>2.316 de 6.950</b> en producción. La de desarrollo solo tenía un set, justo el único en el que se cumplía la suposición de la regla.</p>
+            <p data-i18n="t156">Esa suposición era que el prefijo del número de carta indica su set. No es así: los boosters premium archivan cartas con el número del set original, las promos viven en cuatro expansiones con códigos distintos y dos catálogos escriben el mismo lanzamiento de forma diferente. Ahora los blueprints se indexan por su propio prefijo de coleccionista en las <b>99 expansiones</b>, y el nombre del set puntúa a los candidatos en lugar de filtrarlos, con <b>cero empates sin resolver</b>.</p>
+            <p data-i18n="t157">Por la noche ya había <b>5.688 de 6.950</b> enlazadas, el 85 % de todas las versiones que tienen número de carta. Lo que queda está así a propósito, porque una carta que no sabemos ubicar conserva un enlace de búsqueda en lugar de uno erróneo.</p>
+            <div class="lesson" data-i18n="t158"><small>Lección registrada</small><q>Mide una regla de catálogo sobre el catálogo, no sobre la base de datos de desarrollo.</q></div>
           </div>
           <div class="vis dots-wrap">
-            <div class="dots-head"><span>6,950 printings, one dot each</span><span>22 Sep 2026</span></div>
-            <canvas id="dots" role="img" aria-label="Dot grid of 6,950 printings. 2,316 linked in the morning, 5,688 linked by the evening."></canvas>
+            <div class="dots-head" data-i18n="t159"><span>6.950 versiones, un punto cada una</span><span>22 sept. 2026</span></div>
+            <canvas id="dots" role="img" aria-label="Cuadrícula de 6.950 versiones. 2.316 enlazadas por la mañana y 5.688 por la noche." data-i18n-attr="aria-label:a19"></canvas>
             <div class="m-stats">
-              <b><span id="dots-n">5,688</span> <small>of 6,950 linked</small></b>
-              <div class="m-toggle" role="group" aria-label="Show linking coverage at">
-                <button type="button" data-m="0" aria-pressed="false">Morning</button>
-                <button type="button" data-m="1" aria-pressed="true">Evening</button>
+              <b data-i18n="t160"><span id="dots-n">5.688</span> <small>de 6.950 enlazadas</small></b>
+              <div class="m-toggle" role="group" aria-label="Momento del día" data-i18n-attr="aria-label:a20">
+                <button type="button" data-m="0" aria-pressed="false" data-i18n="t161">Mañana</button>
+                <button type="button" data-m="1" aria-pressed="true" data-i18n="t162">Noche</button>
               </div>
             </div>
-            <div class="legend"><span><i style="background:#C2557A"></i>linked by the first importer</span><span><i style="background:#FF9E92"></i>linked after the fix</span><span><i style="background:rgba(246,232,238,.22)"></i>not linked</span></div>
-            <div class="left-out">
-              <span><b>247</b> DON!! cards with no number</span>
-              <span><b>650</b> promos filed only under event buckets</span>
-              <span><b>215</b> base / Special Rare ties</span>
-              <span><b>77</b> blueprints with no Cardmarket id</span>
-            </div>
+            <div class="legend" data-i18n="t163"><span><i style="background:#C2557A"></i>enlazadas por el primer importador</span><span><i style="background:#FF9E92"></i>enlazadas tras el arreglo</span><span><i style="background:rgba(246,232,238,.22)"></i>sin enlazar</span></div>
+            <div class="left-out" data-i18n="t164"><span><b>247</b> cartas DON!! sin número</span> <span><b>650</b> promos archivadas solo en categorías de eventos</span> <span><b>215</b> empates entre base y Special Rare</span> <span><b>77</b> blueprints sin id de Cardmarket</span></div>
           </div>
         </article>
       </div>
@@ -1012,43 +1027,43 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 
   <div class="log">
     <div class="wrap log-bar">
-      <button class="btn btn-petal log-btn" type="button" aria-expanded="false" aria-controls="log-body">Read the engineering log</button>
-      <p>Four more failures from October that never raised an error, and every milestone since the first commit.</p>
+      <button class="btn btn-petal log-btn" type="button" aria-expanded="false" aria-controls="log-body" data-i18n="t165">Leer el registro de ingeniería</button>
+      <p data-i18n="t166">Cuatro fallos más de octubre que nunca dieron error, y cada hito desde el primer commit.</p>
     </div>
     <div class="log-body" id="log-body" inert><div>
   <section class="sk-sec" aria-labelledby="notes-title">
     <div class="wrap">
       <div class="sec-head" style="margin-bottom:0">
-        <h3 class="sk-t" id="notes-title" data-split>Four more from October</h3>
-        <p class="sk-p" style="margin:0">Shorter entries from the same log. Each one is a failure that never raised an error.</p>
+        <h3 class="sk-t" id="notes-title" data-split data-i18n="t167">Cuatro más de octubre</h3>
+        <p class="sk-p" style="margin:0" data-i18n="t168">Entradas más cortas del mismo registro. Cada una es un fallo que nunca dio error.</p>
       </div>
       <div class="notes">
         <article class="note">
-          <time>15 Oct</time>
-          <h4>Retries that never retried</h4>
-          <p>Eight API clients handed tenacity a bare predicate. Tenacity 8.2.3 calls it with a <code>RetryCallState</code>, so the predicate never matched, and <b>no 5xx or timeout was ever retried</b> in any client. Nothing failed loudly. 4xx and 429 still never retry.</p>
+          <time data-i18n="t169">15 oct.</time>
+          <h4 data-i18n="t170">Reintentos que nunca reintentaban</h4>
+          <p data-i18n="t171">Ocho clientes de API le pasaban a tenacity un predicado a secas. Tenacity 8.2.3 lo llama con un <code>RetryCallState</code>, así que el predicado nunca coincidía y <b>no se reintentó ni un solo 5xx ni un solo timeout</b> en ningún cliente. Nada falló de forma visible. Los 4xx y los 429 siguen sin reintentarse.</p>
 <pre><span class="del">- retry=is_transient,</span>
 <span class="add">+ retry=retry_if_exception(is_transient),</span>
 <span class="add">+ reraise=True,</span></pre>
-          <div class="lesson"><small>Lesson logged</small><q>A retry policy you never saw fire is untested, not working.</q></div>
+          <div class="lesson" data-i18n="t172"><small>Lección registrada</small><q>Una política de reintentos que nunca has visto actuar no funciona: está sin probar.</q></div>
         </article>
         <article class="note">
-          <time>13 Oct</time>
-          <h4>Cardmarket links, checked against Cardmarket</h4>
-          <p>The importer now cross-checks every CardTrader-supplied Cardmarket id against Cardmarket's own product list, in one S3 GET. It refused <b>6 wrong links</b> on prod (4 confirmed in a browser) and linked <b>107 printings</b> CardTrader couldn't. Back on 22 September, the same importer had been linking 33% of the catalogue instead of 97%.</p>
-          <div class="lesson"><small>Lesson logged</small><q>A link from one catalogue is a claim. Check it against the other.</q></div>
+          <time data-i18n="t173">13 oct.</time>
+          <h4 data-i18n="t174">Enlaces de Cardmarket, comprobados contra Cardmarket</h4>
+          <p data-i18n="t175">El importador contrasta ahora cada id de Cardmarket que proporciona CardTrader con la propia lista de productos de Cardmarket, con un solo GET a S3. Rechazó <b>6 enlaces erróneos</b> en producción (4 confirmados en un navegador) y enlazó <b>107 versiones</b> que CardTrader no podía. El 22 de septiembre, ese mismo importador enlazaba el 33 % del catálogo en lugar del 97 %.</p>
+          <div class="lesson" data-i18n="t176"><small>Lección registrada</small><q>Un enlace de un catálogo es una afirmación. Compruébala contra el otro.</q></div>
         </article>
         <article class="note">
-          <time>2 Oct</time>
-          <h4>The uncapped path</h4>
-          <p>Opening a card was the one JustTCG path with no cap: one call per printing every 15 minutes, and on <b>every</b> open when Redis was down. Now a stored price under 24 hours old answers without a call. A background sweep was also re-spending its daily allowance after every deploy. It now checks when it last ran.</p>
-          <div class="lesson"><small>Lesson logged</small><q>Every path to a paid API needs its own cap, including the obvious one.</q></div>
+          <time data-i18n="t177">2 oct.</time>
+          <h4 data-i18n="t178">El camino sin límite</h4>
+          <p data-i18n="t179">Abrir una carta era el único camino hacia JustTCG sin límite: una llamada por versión cada 15 minutos, y en <b>cada</b> apertura cuando Redis estaba caído. Ahora un precio guardado de menos de 24 horas responde sin hacer ninguna llamada. Un barrido en segundo plano también volvía a gastar su cuota diaria después de cada despliegue. Ahora comprueba cuándo se ejecutó por última vez.</p>
+          <div class="lesson" data-i18n="t180"><small>Lección registrada</small><q>Cada camino hacia una API de pago necesita su propio límite, también el más obvio.</q></div>
         </article>
         <article class="note">
-          <time>11 Oct</time>
-          <h4>Box EV that refuses</h4>
-          <p>A source silently stopped stating pull odds. Box expected value is now withheld once unsourced cards hold <b>over 10%</b> of the possible value, rather than shown on bad odds. Same principle as the 1,594% return: no number beats a wrong number.</p>
-          <div class="lesson"><small>Lesson logged</small><q>No number beats a wrong number.</q></div>
+          <time data-i18n="t181">11 oct.</time>
+          <h4 data-i18n="t182">Un valor esperado que se niega</h4>
+          <p data-i18n="t183">Una fuente dejó de indicar las probabilidades sin avisar. Ahora el valor esperado de la caja no se muestra en cuanto las cartas sin fuente suponen <b>más del 10 %</b> del valor posible, en lugar de calcularse con probabilidades erróneas. El mismo principio que la rentabilidad del 1.594 %: mejor ninguna cifra que una cifra errónea.</p>
+          <div class="lesson" data-i18n="t184"><small>Lección registrada</small><q>Mejor ninguna cifra que una cifra errónea.</q></div>
         </article>
       </div>
     </div>
@@ -1056,31 +1071,31 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 
   <section class="sk-sec" aria-labelledby="tl-title" style="padding-top:0">
     <div class="wrap">
-      <h3 class="sk-t" id="tl-title" data-split>Twenty-four weeks, from first commit to a Spanish-first beta</h3>
+      <h3 class="sk-t" id="tl-title" data-split data-i18n="t185">Veinticuatro semanas, del primer commit a una beta en español</h3>
       <div class="tl">
         <span class="tl-line" aria-hidden="true"><span class="tl-fill"></span></span>
         <ol>
-        <li><time>29 Apr</time><div><h5>First commit</h5><p>A backend MVP design spec, then an implementation plan the same day.</p></div></li>
-        <li><time>30 Apr</time><div><h5>Real prices flow</h5><p>The catalogue API wired in for real, behind a mock mode every client keeps.</p></div></li>
-        <li><time>24 Jul</time><div><h5>Docker and Cloudflare R2</h5><p>Card images move to an R2 CDN; the image grows lean.</p></div></li>
-        <li><time>7 Aug</time><div><h5>eBay and arbitrage v2</h5><p>A second market, cross-market scanning and quota resilience.</p></div></li>
-        <li><time>23 Aug</time><div><h5>Language split from variant</h5><p>A Japanese Parallel priced against an English one had read as a 1443% trade. Two facts, two axes.</p></div></li>
-        <li><time>28 Aug</time><div><h5>CardTrader and Europe-first</h5><p>An EU marketplace in euros joins, and the product commits to Spain first.</p></div></li>
-        <li><time>7 Sep</time><div><h5>suckura.app is live</h5><p>The landing site ships, then moves to Cloudflare Pages a day later.</p></div></li>
-        <li><time>10 Sep</time><div><h5>Search stops spending quota</h5><p>Card-number search served from a local catalogue at zero API cost.</p></div></li>
-        <li><time>12 Sep</time><div><h5>Push on a real phone</h5><p>Price alerts go live and deep-link into the app on device.</p></div></li>
-        <li><time>13 Sep</time><div><h5>Fabricated returns removed</h5><p>Comp guards make the grading pool agree with itself or say nothing.</p></div></li>
-        <li><time>18 Sep</time><div><h5>Collection ledger</h5><p>Purchases, sales and profit per card, at zero API cost.</p></div></li>
-        <li><time>20 Sep</time><div><h5>Scan into your collection</h5><p>On-device OCR reads the printed card number into a tray.</p></div></li>
-        <li><time>22 Sep</time><div><h5>A page per printing</h5><p>Cardmarket linking climbs from 2,316 to 5,688 printings in a day.</p></div></li>
-        <li><time>26 Sep</time><div><h5>Closed-beta film</h5><p>The launch film for the closed beta, cut from the app's own screens.</p></div></li>
-        <li class="oct"><time>1 Oct</time><div><h5>Spanish first, arbitrage inside Europe</h5><p>Every screen in Spain Spanish, and EU trades priced in euros at zero JustTCG quota.</p></div></li>
-        <li class="oct"><time>4 Oct</time><div><h5>Tournaments and the meta</h5><p>88 events and 3,931 standings on the first run.</p></div></li>
-        <li class="oct"><time>8 Oct</time><div><h5>Deck builder</h5><p>Tournament decks priced against your collection, missing cards one tap from the ledger.</p></div></li>
-        <li class="oct"><time>11 Oct</time><div><h5>Card sourcing and box EV</h5><p>Pull odds with a cited source, or no expected value at all.</p></div></li>
-        <li class="oct"><time>13 Oct</time><div><h5>Cardmarket in the app</h5><p>Every printing opens its exact Cardmarket page.</p></div></li>
-        <li class="oct"><time>15 Oct</time><div><h5>Retries that retry</h5><p>Eight API clients finally retry 5xx errors and timeouts.</p></div></li>
-        <li class="oct"><time>16 Oct</time><div><h5>Prices by language</h5><p>English, Japanese, Chinese and Korean prices for every printing.</p></div></li>
+        <li><time data-i18n="t186">29 abr.</time><div><h5 data-i18n="t187">Primer commit</h5><p data-i18n="t188">Una especificación de diseño del MVP del backend y, ese mismo día, un plan de implementación.</p></div></li>
+        <li><time data-i18n="t189">30 abr.</time><div><h5 data-i18n="t190">Llegan los precios reales</h5><p data-i18n="t191">La API de catálogo conectada de verdad, detrás de un modo simulado que conserva cada cliente.</p></div></li>
+        <li><time data-i18n="t192">24 jul.</time><div><h5 data-i18n="t9002">Docker y Cloudflare R2</h5><p data-i18n="t193">Las imágenes de las cartas pasan a una CDN en R2 y la imagen de Docker adelgaza.</p></div></li>
+        <li><time data-i18n="t194">7 ago.</time><div><h5 data-i18n="t195">eBay y arbitraje v2</h5><p data-i18n="t196">Un segundo mercado, escaneo entre mercados y resiliencia ante la cuota.</p></div></li>
+        <li><time data-i18n="t197">23 ago.</time><div><h5 data-i18n="t198">El idioma, separado de la variante</h5><p data-i18n="t199">Una Parallel japonesa comparada con una inglesa había aparecido como una operación del 1.443 %. Dos datos, dos ejes.</p></div></li>
+        <li><time data-i18n="t200">28 ago.</time><div><h5 data-i18n="t201">CardTrader y Europa primero</h5><p data-i18n="t202">Se suma un mercado de la UE en euros y el producto apuesta primero por España.</p></div></li>
+        <li><time data-i18n="t203">7 sept.</time><div><h5 data-i18n="t204">suckura.app ya está en línea</h5><p data-i18n="t205">Sale la web y, un día después, pasa a Cloudflare Pages.</p></div></li>
+        <li><time data-i18n="t206">10 sept.</time><div><h5 data-i18n="t207">La búsqueda deja de gastar cuota</h5><p data-i18n="t208">La búsqueda por número de carta se sirve desde un catálogo local sin coste de API.</p></div></li>
+        <li><time data-i18n="t209">12 sept.</time><div><h5 data-i18n="t210">Notificaciones en un móvil real</h5><p data-i18n="t211">Las alertas de precio se activan y abren la pantalla correcta de la app en el dispositivo.</p></div></li>
+        <li><time data-i18n="t212">13 sept.</time><div><h5 data-i18n="t213">Fuera las rentabilidades inventadas</h5><p data-i18n="t214">Las salvaguardas de comparables obligan al conjunto del gradeo a ser coherente o a no decir nada.</p></div></li>
+        <li><time data-i18n="t215">18 sept.</time><div><h5 data-i18n="t216">Registro de la colección</h5><p data-i18n="t217">Compras, ventas y beneficio por carta, sin coste de API.</p></div></li>
+        <li><time data-i18n="t218">20 sept.</time><div><h5 data-i18n="t219">Escanea a tu colección</h5><p data-i18n="t220">El OCR en el dispositivo lee el número impreso de la carta y la deja en una bandeja.</p></div></li>
+        <li><time data-i18n="t221">22 sept.</time><div><h5 data-i18n="t222">Una página por versión</h5><p data-i18n="t223">El enlace con Cardmarket sube de 2.316 a 5.688 versiones en un día.</p></div></li>
+        <li><time data-i18n="t224">26 sept.</time><div><h5 data-i18n="t225">Vídeo de la beta cerrada</h5><p data-i18n="t226">El vídeo de lanzamiento de la beta cerrada, montado con las propias pantallas de la app.</p></div></li>
+        <li class="oct"><time data-i18n="t227">1 oct.</time><div><h5 data-i18n="t228">Español por defecto, arbitraje dentro de Europa</h5><p data-i18n="t229">Cada pantalla en español de España, y operaciones dentro de la UE calculadas en euros sin gastar cuota de JustTCG.</p></div></li>
+        <li class="oct"><time data-i18n="t230">4 oct.</time><div><h5 data-i18n="t231">Torneos y meta</h5><p data-i18n="t232">88 eventos y 3.931 puestos de clasificación en la primera ejecución.</p></div></li>
+        <li class="oct"><time data-i18n="t233">8 oct.</time><div><h5 data-i18n="t234">Constructor de mazos</h5><p data-i18n="t235">Mazos de torneo con precio según tu colección, y las cartas que faltan a un toque del registro.</p></div></li>
+        <li class="oct"><time data-i18n="t236">11 oct.</time><div><h5 data-i18n="t237">Origen de las cartas y valor esperado de caja</h5><p data-i18n="t238">Probabilidades con fuente citada, o ningún valor esperado.</p></div></li>
+        <li class="oct"><time data-i18n="t239">13 oct.</time><div><h5 data-i18n="t240">Cardmarket en la app</h5><p data-i18n="t241">Cada versión abre su página exacta de Cardmarket.</p></div></li>
+        <li class="oct"><time data-i18n="t242">15 oct.</time><div><h5 data-i18n="t243">Reintentos que reintentan</h5><p data-i18n="t244">Ocho clientes de API por fin reintentan los errores 5xx y los timeouts.</p></div></li>
+        <li class="oct"><time data-i18n="t245">16 oct.</time><div><h5 data-i18n="t246">Precios por idioma</h5><p data-i18n="t247">Precios en inglés, japonés, chino y coreano para cada versión.</p></div></li>
         </ol>
       </div>
     </div>
@@ -1100,67 +1115,63 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 <section class="sec" id="work" aria-labelledby="work-title">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="big" id="work-title" data-split>ML and data work</h2>
-      <p class="lede">Deep learning, classical ML and data engineering from university and my bachelor's thesis. Open a row for the details.</p>
+      <h2 class="big" id="work-title" data-split data-i18n="t248">Proyectos de ML y datos</h2>
+      <p class="lede" data-i18n="t249">Deep learning, ML clásico e ingeniería de datos de la universidad y de mi TFG. Abre una fila para ver los detalles.</p>
     </div>
     <div class="projects">
       <div class="proj">
         <button class="proj-head" type="button" aria-expanded="false" aria-controls="p1">
-          <span><span class="proj-kind">Deep learning</span><span class="proj-title">Business Image Classifier</span>
-          <span class="proj-sum">Multimodal deep learning that sorts business images into 28 categories using visual features plus OCR text.</span></span>
+          <span data-i18n="t250"><span class="proj-kind">Deep learning</span><span class="proj-title">Clasificador de imágenes de negocios</span> <span class="proj-sum">Deep learning multimodal que clasifica imágenes de negocios en 28 categorías a partir de rasgos visuales y del texto extraído por OCR.</span></span>
           <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="2"/></svg></span>
         </button>
         <div class="proj-body" id="p1"><div><div class="proj-inner">
-          <p>Trained a multimodal CNN architecture to classify business images across 28 classes. Key finding: text presence in images significantly boosts prediction accuracy, validated through systematic hypothesis testing across data splits. Tracked with W&amp;B.</p>
+          <p data-i18n="t251">Entrené una arquitectura CNN multimodal para clasificar imágenes de negocios en 28 clases. Hallazgo clave: la presencia de texto en las imágenes mejora de forma significativa la precisión de la predicción, validado mediante contrastes de hipótesis sistemáticos en distintas particiones de los datos. Seguimiento con W&amp;B.</p>
           <div>
-            <dl class="metrics"><div><dt>classes</dt><dd>28</dd></div><div><dt>modalities</dt><dd>image + text</dd></div></dl>
-            <ul class="tags"><li>PyTorch</li><li>TensorFlow</li><li>Computer Vision</li></ul>
-            <a class="proj-link" href="https://github.com/dxnetft/business-classification" target="_blank" rel="noopener">View repository ↗</a>
+            <dl class="metrics"><div><dt data-i18n="t252">clases</dt><dd>28</dd></div><div><dt data-i18n="t253">modalidades</dt><dd data-i18n="t254">imagen + texto</dd></div></dl>
+            <ul class="tags"><li>PyTorch</li><li>TensorFlow</li><li data-i18n="t255">Visión por computador</li></ul>
+            <a class="proj-link" href="https://github.com/dxnetft/business-classification" target="_blank" rel="noopener" data-i18n="t256">Ver repositorio ↗</a>
           </div>
         </div></div></div>
       </div>
       <div class="proj">
         <button class="proj-head" type="button" aria-expanded="false" aria-controls="p2">
-          <span><span class="proj-kind">Bachelor's thesis, 9/10</span><span class="proj-title">ETL Pipeline for Commercial Prospecting</span>
-          <span class="proj-sum">Consolidates prospecting data from multiple sources into one clean repository.</span></span>
+          <span data-i18n="t257"><span class="proj-kind">TFG, 9/10</span><span class="proj-title">Pipeline ETL para prospección comercial</span> <span class="proj-sum">Consolida datos de prospección de varias fuentes en un único repositorio limpio.</span></span>
           <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="2"/></svg></span>
         </button>
         <div class="proj-body" id="p2"><div><div class="proj-inner">
-          <p>Designed and implemented a full ETL pipeline that consolidates commercial prospecting data from heterogeneous sources. Built robust cleansing and normalization routines to ensure data integrity before loading into a centralized CRM system.</p>
+          <p data-i18n="t258">Diseñé e implementé un pipeline ETL completo que consolida datos de prospección comercial procedentes de fuentes heterogéneas. Desarrollé rutinas robustas de limpieza y normalización para garantizar la integridad de los datos antes de cargarlos en un CRM centralizado.</p>
           <div>
-            <dl class="metrics"><div><dt>thesis grade</dt><dd>9</dd></div><div><dt>sources integrated</dt><dd>3</dd></div><div><dt>enrichment rate</dt><dd>98%</dd></div><div><dt>peak throughput</dt><dd>953 registers/s</dd></div></dl>
-            <ul class="tags"><li>Python</li><li>Microsoft VBA</li><li>ETL</li><li>Data Quality</li><li>Data Processing</li></ul>
-            <p class="proj-private">Private repository</p>
+            <dl class="metrics"><div><dt data-i18n="t259">nota del TFG</dt><dd>9</dd></div><div><dt data-i18n="t260">fuentes integradas</dt><dd>3</dd></div><div><dt data-i18n="t261">tasa de enriquecimiento</dt><dd data-i18n="t262">98 %</dd></div><div><dt data-i18n="t263">rendimiento máximo</dt><dd data-i18n="t264">953 registros/s</dd></div></dl>
+            <ul class="tags"><li>Python</li><li>Microsoft VBA</li><li>ETL</li><li data-i18n="t265">Calidad de datos</li><li data-i18n="t266">Procesamiento de datos</li></ul>
+            <p class="proj-private" data-i18n="t267">Repositorio privado</p>
           </div>
         </div></div></div>
       </div>
       <div class="proj">
         <button class="proj-head" type="button" aria-expanded="false" aria-controls="p3">
-          <span><span class="proj-kind">Databases</span><span class="proj-title">Relational Data Analysis System</span>
-          <span class="proj-sum">Schema design, query optimisation and processing over 100k+ records, with a 44% cut in query time.</span></span>
+          <span data-i18n="t268"><span class="proj-kind">Bases de datos</span><span class="proj-title">Sistema de análisis de datos relacionales</span> <span class="proj-sum">Diseño de esquemas, optimización de consultas y procesamiento de más de 100.000 registros, con una reducción del 44 % en el tiempo de consulta.</span></span>
           <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="2"/></svg></span>
         </button>
         <div class="proj-body" id="p3"><div><div class="proj-inner">
-          <p>Designed a normalized relational schema, implemented optimized queries and indexing strategies resulting in a 44% reduction in query execution time across 100k+ records.</p>
+          <p data-i18n="t269">Diseñé un esquema relacional normalizado e implementé consultas optimizadas y estrategias de indexación, con una reducción del 44 % en el tiempo de ejecución de las consultas sobre más de 100.000 registros.</p>
           <div>
-            <dl class="metrics"><div><dt>records</dt><dd>100k+</dd></div><div><dt>query speedup</dt><dd>44%</dd></div></dl>
+            <dl class="metrics"><div><dt data-i18n="t270">registros</dt><dd>100k+</dd></div><div><dt data-i18n="t271">mejora de velocidad</dt><dd data-i18n="t272">44 %</dd></div></dl>
             <ul class="tags"><li>SQL</li><li>Python</li><li>PostgreSQL</li></ul>
-            <p class="proj-private">Private repository</p>
+            <p class="proj-private" data-i18n="t273">Repositorio privado</p>
           </div>
         </div></div></div>
       </div>
       <div class="proj">
         <button class="proj-head" type="button" aria-expanded="false" aria-controls="p4">
-          <span><span class="proj-kind">Data visualisation</span><span class="proj-title">Population Growth Analysis</span>
-          <span class="proj-sum">UN population data across 200+ regions: cleaning, correlation analysis and animated visualisations in R.</span></span>
+          <span data-i18n="t274"><span class="proj-kind">Visualización de datos</span><span class="proj-title">Análisis del crecimiento de la población</span> <span class="proj-sum">Datos de población de la ONU de más de 200 regiones: limpieza, análisis de correlaciones y visualizaciones animadas en R.</span></span>
           <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="2"/></svg></span>
         </button>
         <div class="proj-body" id="p4"><div><div class="proj-inner">
-          <p>Full data pipeline in R: raw UN population CSV ingestion, tidyverse-based cleaning, correlation matrix generation, and animated/interactive plots via gganimate and Plotly. Covers birth/death differentials and total population trends across 200+ regions.</p>
+          <p data-i18n="t275">Pipeline de datos completo en R: ingesta del CSV en bruto de población de la ONU, limpieza con tidyverse, generación de matrices de correlación y gráficos animados e interactivos con gganimate y Plotly. Cubre las diferencias entre natalidad y mortalidad y la evolución de la población total en más de 200 regiones.</p>
           <div>
-            <dl class="metrics"><div><dt>regions</dt><dd>200+</dd></div><div><dt>stack</dt><dd>R / Shiny</dd></div></dl>
-            <ul class="tags"><li>R</li><li>ggplot2</li><li>Plotly</li><li>Data Viz</li></ul>
-            <a class="proj-link" href="https://github.com/dxnetft/population-growth-analysis-trends" target="_blank" rel="noopener">View repository ↗</a>
+            <dl class="metrics"><div><dt data-i18n="t276">regiones</dt><dd>200+</dd></div><div><dt>stack</dt><dd>R / Shiny</dd></div></dl>
+            <ul class="tags"><li>R</li><li>ggplot2</li><li>Plotly</li><li data-i18n="t277">Visualización</li></ul>
+            <a class="proj-link" href="https://github.com/dxnetft/population-growth-analysis-trends" target="_blank" rel="noopener" data-i18n="t278">Ver repositorio ↗</a>
           </div>
         </div></div></div>
       </div>
@@ -1171,23 +1182,23 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 <section class="sec" id="experience" aria-labelledby="xp-title" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="big" id="xp-title" data-split>Where I've built things</h2>
-      <p class="lede">A product of my own, a data role at SAP, and five years of data engineering at university.</p>
+      <h2 class="big" id="xp-title" data-split data-i18n="t279">Dónde he construido cosas</h2>
+      <p class="lede" data-i18n="t280">Un producto propio, un puesto de datos en SAP y cinco años de ingeniería de datos en la universidad.</p>
     </div>
     <article class="xp">
       <div class="xp-side">
         <div class="xp-logo dark"><img src="assets/suckura/mark.webp" alt="" width="384" height="384"></div>
         <h3 class="xp-co">Suckura</h3>
-        <p class="xp-role">Founder</p>
-        <p class="xp-when">Apr 2026 to present, closed beta</p>
+        <p class="xp-role" data-i18n="t281">Fundador</p>
+        <p class="xp-when" data-i18n="t282">Abr. 2026 – actualidad, beta cerrada</p>
       </div>
       <div>
         <ul class="pts">
-          <li>Building solo, end to end: a <b>FastAPI</b> backend on Render, a <b>React Native (Expo)</b> app, and the landing site on Cloudflare Pages, plus every product decision in between.</li>
-          <li>Prices One Piece cards across eBay, CardTrader and JustTCG, matches each printing across catalogues and links it to its exact Cardmarket page, and nets every cross-market trade of commission, payment fee and postage.</li>
-          <li>Runs on a <b>1,000-call-a-month</b> pricing API: circuit breakers, rate limiting, a 15-minute Redis cache that never stores a failure, and a local catalogue that answers card-number searches at zero API cost.</li>
-          <li>Shipped a Spanish-first app, arbitrage inside Europe, tournament meta from <b>88 events</b>, a deck builder and prices in four card languages in October alone.</li>
-          <li>Backed by a <b>1,983-test</b> backend suite covering pricing, arbitrage fees, alerts, grading and the collection ledger.</li>
+          <li data-i18n="t283">Lo construyo yo solo, de principio a fin: un backend en <b>FastAPI</b> sobre Render, una app en <b>React Native (Expo)</b> y la web en Cloudflare Pages, además de cada decisión de producto entre medias.</li>
+          <li data-i18n="t284">Pone precio a cartas de One Piece en eBay, CardTrader y JustTCG, empareja cada versión entre catálogos y la enlaza a su página exacta de Cardmarket, y a cada operación entre mercados le descuenta la comisión, la comisión de pago y el envío.</li>
+          <li data-i18n="t285">Funciona con una API de precios de <b>1.000 llamadas al mes</b>: circuit breakers, limitación de peticiones, una caché de Redis de 15 minutos que nunca guarda un fallo y un catálogo local que responde a las búsquedas por número de carta sin coste de API.</li>
+          <li data-i18n="t286">Solo en octubre: la app en español por defecto, arbitraje dentro de Europa, meta de torneos a partir de <b>88 eventos</b>, un constructor de mazos y precios en cuatro idiomas de carta.</li>
+          <li data-i18n="t287">Respaldado por una batería de <b>1.983 tests</b> de backend que cubre precios, comisiones de arbitraje, alertas, gradeo y el registro de la colección.</li>
         </ul>
         <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy</li><li>Redis</li><li>PostgreSQL</li><li>OpenCV</li><li>TypeScript</li><li>React Native</li><li>Expo</li><li>Cloudflare</li></ul>
       </div>
@@ -1196,13 +1207,13 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
       <div class="xp-side">
         <div class="xp-logo"><img src="assets/SAPLOGO.png" alt="" width="1024" height="1024"></div>
         <h3 class="xp-co">SAP SE</h3>
-        <p class="xp-role">Data Engineer &amp; Analyst<small>titled Digital Demand Associate</small></p>
-        <p class="xp-when">Nov 2025 to May 2026</p>
+        <p class="xp-role" data-i18n="t288">Ingeniero y analista de datos<small>puesto oficial: Digital Demand Associate</small></p>
+        <p class="xp-when" data-i18n="t289">Nov. 2025 – may. 2026</p>
       </div>
       <div>
         <ul class="pts">
-          <li>Transitioned legacy data workflows from self-developed VBA modules to a high-throughput ETL pipeline; increased data quality from <b>73% to 90%</b> and slashed manual processing by <b>81%</b>.</li>
-          <li>Developed an interactive 2026 Sales Performance Hub for two global teams, automating the tracking of quarterly targets, pipeline generation, and lead handovers with granular drill-down capabilities.</li>
+          <li data-i18n="t290">Migré flujos de datos heredados de módulos VBA de desarrollo propio a un pipeline ETL de alto rendimiento; la calidad de los datos pasó del <b>73 % al 90 %</b> y el procesamiento manual se redujo un <b>81 %</b>.</li>
+          <li data-i18n="t291">Desarrollé un Sales Performance Hub 2026 interactivo para dos equipos globales, que automatiza el seguimiento de los objetivos trimestrales, la generación de pipeline y el traspaso de leads, con la posibilidad de bajar hasta el máximo detalle.</li>
         </ul>
         <ul class="tags"><li>Excel</li><li>Python</li><li>Microsoft VBA</li><li>Power BI</li><li>Power Apps</li><li>ZoomInfo API</li></ul>
       </div>
@@ -1211,17 +1222,17 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
       <div class="xp-side">
         <div class="xp-logo"><img src="assets/uab_logo.jpg" alt="" width="512" height="512"></div>
         <h3 class="xp-co">Universitat Autònoma de Barcelona</h3>
-        <p class="xp-role">B.Sc Data Engineering</p>
-        <p class="xp-when">Sep 2021 to Jul 2026, thesis 9/10</p>
+        <p class="xp-role" data-i18n="t292">Grado en Ingeniería de Datos</p>
+        <p class="xp-when" data-i18n="t293">Sept. 2021 – jul. 2026, TFG 9/10</p>
       </div>
       <div>
         <ul class="pts">
-          <li>(Bachelor's thesis) End-to-end ETL system consolidating prospecting data from multiple sources with data quality cleansing, normalization, and centralized repository loading.</li>
-          <li>Engineered an end-to-end sentiment analysis framework evaluating SVM, Random Forest, and Naive Bayes models; optimized performance to a <b>90% F1-score</b> through rigorous hyperparameter tuning and cross-validation.</li>
-          <li>Developed a comprehensive ML evaluation suite to analyze Precision-Recall trade-offs and Confusion Matrices, ensuring model robustness against imbalanced linguistic datasets.</li>
-          <li>Engineered a real-time object detection pipeline using OpenCV to monitor car license plates on highways, achieving <b>88% accuracy</b> in identifications.</li>
-          <li>Developed a high-frequency backtesting engine using Cython for core computation, achieving a <b>50x speedup</b> over pure Python for complex matrix operations.</li>
-          <li>Optimized memory-intensive graph theory algorithms for social network analysis, reducing computational complexity from O(n²) to O(n log n).</li>
+          <li data-i18n="t294">(TFG) Sistema ETL de principio a fin que consolida datos de prospección de varias fuentes, con limpieza para la calidad de los datos, normalización y carga en un repositorio centralizado.</li>
+          <li data-i18n="t295">Diseñé un framework de análisis de sentimiento de principio a fin que evalúa modelos SVM, Random Forest y Naive Bayes; optimicé el rendimiento hasta un <b>F1-score del 90 %</b> mediante un ajuste riguroso de hiperparámetros y validación cruzada.</li>
+          <li data-i18n="t296">Desarrollé una batería completa de evaluación de ML para analizar el equilibrio entre precisión y exhaustividad y las matrices de confusión, garantizando la robustez del modelo frente a conjuntos de datos lingüísticos desequilibrados.</li>
+          <li data-i18n="t297">Diseñé un pipeline de detección de objetos en tiempo real con OpenCV para controlar matrículas de coches en autopistas, con un <b>88 % de acierto</b> en las identificaciones.</li>
+          <li data-i18n="t298">Desarrollé un motor de backtesting de alta frecuencia con Cython para el cálculo principal, logrando una <b>aceleración de 50x</b> frente a Python puro en operaciones complejas con matrices.</li>
+          <li data-i18n="t299">Optimicé algoritmos de teoría de grafos con uso intensivo de memoria para el análisis de redes sociales, reduciendo la complejidad computacional de O(n²) a O(n log n).</li>
         </ul>
         <ul class="tags"><li>Python</li><li>SQL</li><li>R</li><li>AWS</li><li>OpenCV</li><li>Docker</li><li>Kubernetes</li><li>Spark</li><li>scikit-learn</li><li>PyTorch</li><li>TensorFlow</li><li>Cython</li><li>NLP</li><li>LLM</li></ul>
       </div>
@@ -1232,58 +1243,58 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 <section class="sec" id="about" aria-labelledby="about-title" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="big" id="about-title" data-split>The person behind it</h2>
+      <h2 class="big" id="about-title" data-split data-i18n="t300">La persona detrás</h2>
     </div>
     <div class="about">
       <figure class="about-photo" style="margin:0">
-        <img src="assets/portrait.webp" alt="Portrait of Dante Rodríguez Milán" width="800" height="1200" loading="lazy">
-        <figcaption><span>Open to work</span><span>Barcelona, ES</span><span>CET / UTC+1</span><span>Applied AI, production systems</span></figcaption>
+        <img src="assets/portrait.webp" alt="Retrato de Dante Rodríguez Milán" width="800" height="1200" loading="lazy" data-i18n-attr="alt:a21">
+        <figcaption data-i18n="t301"><span>Disponible para trabajar</span><span>Barcelona, ES</span><span>CET / UTC+1</span><span>IA aplicada, sistemas en producción</span></figcaption>
       </figure>
       <div>
         <div class="bio">
-          <p>I'm a 23-year-old Applied AI Engineer with a data engineering foundation. I build the systems that move information at scale, then put models and AI on top of them.</p>
-          <p>Right now I'm building Suckura solo: backend, mobile client, infrastructure and product decisions, all of it. Outside that I'm reading AI papers, shipping side projects, or grinding the ladder in the most competitive videogames out there.</p>
+          <p data-i18n="t302">Soy ingeniero de IA aplicada, tengo 23 años y una base en ingeniería de datos. Construyo los sistemas que mueven información a escala y después pongo modelos e IA encima.</p>
+          <p data-i18n="t303">Ahora mismo estoy construyendo Suckura yo solo: backend, cliente móvil, infraestructura y decisiones de producto, todo. Fuera de eso, leo papers de IA, saco proyectos personales o me dejo las horas en las ranked de los videojuegos más competitivos que hay.</p>
         </div>
         <div class="about-lists">
           <div>
-            <h3>Currently</h3>
-            <ul><li>Just finished B.Sc Data Engineering</li><li>Building Suckura, in closed beta</li><li>Learning applied AI, GaaS and Japanese</li></ul>
+            <h3 data-i18n="t304">Ahora mismo</h3>
+            <ul><li data-i18n="t305">Acabo de terminar el grado en Ingeniería de Datos</li><li data-i18n="t306">Construyendo Suckura, en beta cerrada</li><li data-i18n="t307">Aprendiendo IA aplicada, GaaS y japonés</li></ul>
           </div>
           <div>
-            <h3>Languages</h3>
-            <ul><li>Spanish <span>native</span></li><li>Catalan <span>native</span></li><li>English <span>advanced (C1)</span></li><li>French <span>dual high school diploma (C1 equivalent)</span></li></ul>
+            <h3 data-i18n="t308">Idiomas</h3>
+            <ul><li data-i18n="t309">Español <span>nativo</span></li><li data-i18n="t310">Catalán <span>nativo</span></li><li data-i18n="t311">Inglés <span>avanzado (C1)</span></li><li data-i18n="t312">Francés <span>doble titulación de bachillerato (equivalente a C1)</span></li></ul>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="marquee" aria-label="Principles">
+  <div class="marquee" aria-label="Principios" data-i18n-attr="aria-label:a22">
     <div class="mq-row">
-      <ul><li>data as a product, not a byproduct</li><li>automation is the ultimate form of laziness and the highest form of efficiency</li><li>elegant complexity</li></ul>
-      <ul aria-hidden="true"><li>data as a product, not a byproduct</li><li>automation is the ultimate form of laziness and the highest form of efficiency</li><li>elegant complexity</li></ul>
+      <ul><li data-i18n="t313">los datos como producto, no como subproducto</li><li data-i18n="t314">la automatización es la forma definitiva de pereza y la forma más elevada de eficiencia</li><li data-i18n="t315">complejidad elegante</li></ul>
+      <ul aria-hidden="true"><li data-i18n="t316">los datos como producto, no como subproducto</li><li data-i18n="t317">la automatización es la forma definitiva de pereza y la forma más elevada de eficiencia</li><li data-i18n="t318">complejidad elegante</li></ul>
     </div>
     <div class="mq-row alt">
-      <ul><li>build to learn (and for the 3 AM incident)</li><li>the ethics of information</li><li>AI is the engine, clean data is the fuel</li></ul>
-      <ul aria-hidden="true"><li>build to learn (and for the 3 AM incident)</li><li>the ethics of information</li><li>AI is the engine, clean data is the fuel</li></ul>
+      <ul><li data-i18n="t319">construir para aprender (y para la incidencia de las 3 de la madrugada)</li><li data-i18n="t320">la ética de la información</li><li data-i18n="t321">la IA es el motor, los datos limpios son el combustible</li></ul>
+      <ul aria-hidden="true"><li data-i18n="t322">construir para aprender (y para la incidencia de las 3 de la madrugada)</li><li data-i18n="t323">la ética de la información</li><li data-i18n="t324">la IA es el motor, los datos limpios son el combustible</li></ul>
     </div>
   </div>
 
   <div class="wrap">
     <div class="sec-head ranks-head" style="margin-bottom:0">
-      <h2 class="big" style="font-size:clamp(2.2rem,5vw,4.6rem)" data-split>Off the clock: peak ranks</h2>
-      <p class="lede">Competitive games I've played seriously, and the highest rank I reached in each.</p>
+      <h2 class="big" style="font-size:clamp(2.2rem,5vw,4.6rem)" data-split data-i18n="t325">Fuera del trabajo: rangos máximos</h2>
+      <p class="lede" data-i18n="t326">Juegos competitivos a los que he jugado en serio y el rango más alto que alcancé en cada uno.</p>
     </div>
     <ul class="ranks">
-      <li class="rank"><img src="assets/global_elite.png" alt="" loading="lazy"><div><b>Global Elite</b><span class="g">CS:GO, 2019</span><span class="n">Highest rank in matchmaking, top ~0.7%</span></div><span class="foil"></span></li>
-      <li class="rank"><img src="assets/rl_gc.png" alt="" loading="lazy"><div><b>Grand Champion</b><span class="g">Rocket League, 2019</span><span class="n">Top rank before the Supersonic Legend era, top 0.05%</span></div><span class="foil"></span></li>
-      <li class="rank"><img src="assets/immortal_2.png" alt="" loading="lazy"><div><b>Immortal 2</b><span class="g">Valorant, 2023</span><span class="n">One tier below Radiant, top 0.04% (#6855)</span></div><span class="foil"></span></li>
-      <li class="rank"><img src="assets/glad_new.webp" alt="" loading="lazy"><div><b>2671 rating</b><span class="g">World of Warcraft, 2010</span><span class="n">2v2 Arena, Gladiator-tier bracket, top 0.5% (yes, 2010)</span></div><span class="foil"></span></li>
-      <li class="rank"><img src="assets/hs_legend.png" alt="" loading="lazy"><div><b>Legend #3,503</b><span class="g">Hearthstone, 2024</span><span class="n">Season 124, 70% win rate, top ~0.1%</span></div><span class="foil"></span></li>
-      <li class="rank"><img src="assets/fr_epic_badge.png" alt="" loading="lazy"><div><b>Legendary #4</b><span class="g">Fantasy Rivals, 2014</span><span class="n">Top 4 worldwide</span></div><span class="foil"></span></li>
-      <li class="rank"><img src="assets/androxus.png" alt="" loading="lazy"><div><b>Master</b><span class="g">Paladins, 2016</span><span class="n">Highest rank before the OB56 rework, top 50 Androxus worldwide</span></div><span class="foil"></span></li>
-      <li class="rank"><img src="assets/unreal.png" alt="" loading="lazy"><div><b>Unreal</b><span class="g">Fortnite, 2023</span><span class="n">Top rank, top ~0.5%, €3k earnings 2017–2022</span></div><span class="foil"></span></li>
-      <li class="rank"><img src="assets/league_diamond.png" alt="" loading="lazy"><div><b>Diamond</b><span class="g">SR &amp; TFT, 2025–26</span><span class="n">New player to Diamond in 2 months, top ~2%</span><span class="n">Currently #8078, top 1.2%</span></div><span class="foil"></span></li>
+      <li class="rank"><img src="assets/global_elite.png" alt="" loading="lazy"><div data-i18n="t327"><b>Global Elite</b><span class="g">CS:GO, 2019</span><span class="n">Rango más alto del matchmaking, top ~0,7 %</span></div><span class="foil"></span></li>
+      <li class="rank"><img src="assets/rl_gc.png" alt="" loading="lazy"><div data-i18n="t328"><b>Grand Champion</b><span class="g">Rocket League, 2019</span><span class="n">Rango más alto antes de la era Supersonic Legend, top 0,05 %</span></div><span class="foil"></span></li>
+      <li class="rank"><img src="assets/immortal_2.png" alt="" loading="lazy"><div data-i18n="t329"><b>Immortal 2</b><span class="g">Valorant, 2023</span><span class="n">Un nivel por debajo de Radiant, top 0,04 % (#6855)</span></div><span class="foil"></span></li>
+      <li class="rank"><img src="assets/glad_new.webp" alt="" loading="lazy"><div data-i18n="t330"><b>2671 de rating</b><span class="g">World of Warcraft, 2010</span><span class="n">Arena 2v2, franja de nivel Gladiator, top 0,5 % (sí, en 2010)</span></div><span class="foil"></span></li>
+      <li class="rank"><img src="assets/hs_legend.png" alt="" loading="lazy"><div data-i18n="t331"><b>Legend #3.503</b><span class="g">Hearthstone, 2024</span><span class="n">Temporada 124, 70 % de victorias, top ~0,1 %</span></div><span class="foil"></span></li>
+      <li class="rank"><img src="assets/fr_epic_badge.png" alt="" loading="lazy"><div data-i18n="t332"><b>Legendary #4</b><span class="g">Fantasy Rivals, 2014</span><span class="n">Top 4 mundial</span></div><span class="foil"></span></li>
+      <li class="rank"><img src="assets/androxus.png" alt="" loading="lazy"><div data-i18n="t333"><b>Master</b><span class="g">Paladins, 2016</span><span class="n">Rango más alto antes del rework OB56, top 50 mundial con Androxus</span></div><span class="foil"></span></li>
+      <li class="rank"><img src="assets/unreal.png" alt="" loading="lazy"><div data-i18n="t334"><b>Unreal</b><span class="g">Fortnite, 2023</span><span class="n">Rango más alto, top ~0,5 %, 3.000 € en ganancias entre 2017 y 2022</span></div><span class="foil"></span></li>
+      <li class="rank"><img src="assets/league_diamond.png" alt="" loading="lazy"><div data-i18n="t335"><b>Diamond</b><span class="g">SR y TFT, 2025–26</span><span class="n">De jugador nuevo a Diamond en 2 meses, top ~2 %</span><span class="n">Actualmente #8078, top 1,2 %</span></div><span class="foil"></span></li>
     </ul>
   </div>
 </section>
@@ -1291,33 +1302,33 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 <section class="sec" id="skills" aria-labelledby="skills-title" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="big" id="skills-title" data-split>What I work with</h2>
-      <p class="lede">Years of hands-on use, not courses taken.</p>
+      <h2 class="big" id="skills-title" data-split data-i18n="t336">Con qué trabajo</h2>
+      <p class="lede" data-i18n="t337">Años de uso real, no cursos hechos.</p>
     </div>
     <div class="skills">
-      <div><h3>AI / ML</h3><ul>
-        <li style="--y:3"><div><span>PyTorch</span><small>3 yrs</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:4"><div><span>Scikit-learn</span><small>4 yrs</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:2"><div><span>LLM APIs</span><small>2 yrs</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:2"><div><span>TensorFlow</span><small>2 yrs</small></div><div class="bar"><i></i></div></li>
+      <div><h3 data-i18n="t338">IA / ML</h3><ul>
+        <li style="--y:3"><div data-i18n="t339"><span>PyTorch</span><small>3 años</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:4"><div data-i18n="t340"><span>Scikit-learn</span><small>4 años</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:2"><div data-i18n="t341"><span>APIs de LLM</span><small>2 años</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:2"><div data-i18n="t342"><span>TensorFlow</span><small>2 años</small></div><div class="bar"><i></i></div></li>
       </ul></div>
-      <div><h3>Backend &amp; applied AI</h3><ul>
-        <li style="--y:5"><div><span>Python</span><small>5 yrs</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:.6"><div><span>FastAPI</span><small>&lt;1 yr</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:.6"><div><span>Redis</span><small>&lt;1 yr</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:.6"><div><span>React Native, Expo</span><small>&lt;1 yr</small></div><div class="bar"><i></i></div></li>
+      <div><h3 data-i18n="t343">Backend e IA aplicada</h3><ul>
+        <li style="--y:5"><div data-i18n="t344"><span>Python</span><small>5 años</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:.6"><div data-i18n="t345"><span>FastAPI</span><small>&lt;1 año</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:.6"><div data-i18n="t346"><span>Redis</span><small>&lt;1 año</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:.6"><div data-i18n="t347"><span>React Native, Expo</span><small>&lt;1 año</small></div><div class="bar"><i></i></div></li>
       </ul></div>
-      <div><h3>Data engineering</h3><ul>
-        <li style="--y:2"><div><span>Apache Spark</span><small>2 yrs</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:5"><div><span>Pandas</span><small>5 yrs</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:2"><div><span>PostgreSQL</span><small>2 yrs</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:4"><div><span>SQL</span><small>4 yrs</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:4"><div><span>ETL pipelines</span><small>4 yrs</small></div><div class="bar"><i></i></div></li>
+      <div><h3 data-i18n="t348">Ingeniería de datos</h3><ul>
+        <li style="--y:2"><div data-i18n="t349"><span>Apache Spark</span><small>2 años</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:5"><div data-i18n="t350"><span>Pandas</span><small>5 años</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:2"><div data-i18n="t351"><span>PostgreSQL</span><small>2 años</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:4"><div data-i18n="t352"><span>SQL</span><small>4 años</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:4"><div data-i18n="t353"><span>Pipelines ETL</span><small>4 años</small></div><div class="bar"><i></i></div></li>
       </ul></div>
-      <div><h3>Infrastructure</h3><ul>
-        <li style="--y:1"><div><span>Docker / K8s</span><small>1 yr</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:2"><div><span>Azure / AWS</span><small>2 yrs</small></div><div class="bar"><i></i></div></li>
-        <li style="--y:.6"><div><span>Cloudflare</span><small>&lt;1 yr</small></div><div class="bar"><i></i></div></li>
+      <div><h3 data-i18n="t354">Infraestructura</h3><ul>
+        <li style="--y:1"><div data-i18n="t355"><span>Docker / K8s</span><small>1 año</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:2"><div data-i18n="t356"><span>Azure / AWS</span><small>2 años</small></div><div class="bar"><i></i></div></li>
+        <li style="--y:.6"><div data-i18n="t357"><span>Cloudflare</span><small>&lt;1 año</small></div><div class="bar"><i></i></div></li>
       </ul></div>
     </div>
   </div>
@@ -1326,13 +1337,13 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    <h2 class="contact-h" id="contact-title" aria-label="Let's build something intelligent."><span class="ln" aria-hidden="true">Let's build</span><span class="ln" aria-hidden="true">something</span><span class="ln" aria-hidden="true">intelligent.</span></h2>
+    <h2 class="contact-h" id="contact-title" aria-label="Construyamos algo inteligente." data-i18n="t358" data-i18n-attr="aria-label:a23"><span class="ln" aria-hidden="true">Construyamos</span><span class="ln" aria-hidden="true">algo</span><span class="ln" aria-hidden="true">inteligente.</span></h2>
     <div class="contact-grid">
       <div>
-        <p>Open to Applied AI and AI engineering roles, ML collaborations, and interesting side projects. I reply within 24 hours.</p>
+        <p data-i18n="t359">Abierto a puestos de IA aplicada e ingeniería de IA, colaboraciones de ML y proyectos personales interesantes. Respondo en menos de 24 horas.</p>
         <a class="mail magnetic" href="mailto:dxnet.contact@gmail.com">dxnet.contact@gmail.com</a>
         <div class="btns">
-          <button class="btn" type="button" id="copy-email">Copy email</button>
+          <button class="btn" type="button" id="copy-email" data-i18n="t360">Copiar email</button>
           <a class="btn" href="https://github.com/dxnetft" target="_blank" rel="noopener">GitHub ↗</a>
           <a class="btn" href="https://www.linkedin.com/in/dante-rodriguez-milan-850420275/" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
@@ -1340,18 +1351,14 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
       </div>
       <form class="form" id="mail-form">
         <div class="two">
-          <label>Name<input name="name" autocomplete="name" required></label>
-          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label><span data-i18n="t361">Nombre</span><input name="name" autocomplete="name" required></label>
+          <label><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
         </div>
-        <label>What are you working on?<textarea name="msg" required></textarea></label>
-        <button class="btn" type="submit">Open in your email app</button>
+        <label><span data-i18n="t362">¿En qué estás trabajando?</span><textarea name="msg" required></textarea></label>
+        <button class="btn" type="submit" data-i18n="t363">Abrir en tu app de correo</button>
       </form>
     </div>
-    <footer class="foot">
-      <span>© 2026 Dante Rodríguez Milán</span>
-      <span>Barcelona, built by hand, no framework</span>
-      <a href="#top">Back to top</a>
-    </footer>
+    <footer class="foot" data-i18n="t364"><span>© 2026 Dante Rodríguez Milán</span> <span>Barcelona, hecho a mano, sin framework</span> <a href="#top">Volver arriba</a></footer>
   </div>
 </section>
 
@@ -1373,6 +1380,61 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
   var pinned = false;   // true while the desktop hero pin owns the card flip
   var lenis = null;
 
+  /* ---------- language: the page is written in Spanish, English comes from here ---------- */
+  var EN = {"t0": "Skip to content", "t1": "<a href=\"#suckura\">Suckura</a> <a href=\"#work\">Work</a> <a href=\"#experience\">Experience</a> <a href=\"#about\">About</a> <a href=\"#contact\">Contact</a>", "t2": "<i aria-hidden=\"true\"></i>Open to work", "t3": "Menu", "t4": "<b>Applied AI Engineer</b> in Barcelona", "t5": "I build production AI and data systems end to end, from the pipeline to the shipped product. Right now that means <a href=\"#suckura\">Suckura™</a>, a One Piece TCG price tracker and cross-market arbitrage engine for European collectors. I'm building it solo, and it's in closed beta.", "t6": "See Suckura", "t7": "Get in touch", "t8": "<span class=\"pc-name\">Dante Rodríguez Milán</span><span class=\"pc-role\">Applied AI Engineer, Barcelona</span>", "t9": "1,983", "t10": "backend tests passing on Suckura", "t11": "1,166", "t12": "commits since 29 April 2026", "t13": "B.Sc thesis, Data Engineering", "t14": "<span>Founder of Suckura, closed beta</span><span>Barcelona</span>", "t15": "<span class=\"t-ptr\">Scroll, and the card turns over</span><span class=\"t-touch\">Tap or click the card to turn it over</span>", "t16": "Card prices across markets, net of every fee.", "t17": "Lead project. I'm the founder, and the only engineer.", "t18": "Suckura tracks <b>One Piece TCG</b> prices across eBay, CardTrader and JustTCG, matches every printing of every card between their catalogues, and works out what a trade between two markets actually leaves you once commission, payment fees and postage are paid. It's built for European collectors first, and since October the app speaks Spanish first. I built every layer myself: the <b>FastAPI</b> backend on Render, the <b>React Native</b> app on Expo, and the landing site on Cloudflare Pages.", "t19": "Visit suckura.app", "t20": "Watch the beta film", "t21": "Status", "t22": "Closed beta, invite-only Android", "t23": "Started", "t24": "1,166", "t25": "Backend tests", "t26": "1,983 passing", "t27": "Printings catalogued", "t28": "6,950", "t29": "Card images on R2", "t30": "3,156+", "t31": "App language", "t32": "Spanish first, English", "t33": "Card scan", "t34": "On-device OCR", "t35": "Lot appraisal, in testing", "t36": "ORB + RANSAC matcher, 0 wrong picks", "t37": "Six screens, one idea: the most valuable number first", "t38": "<b>Search.</b> Every printing gets its own price.", "t39": "<b>Prices in euros.</b> Each market named, eBay marked as an ask.", "t40": "<b>Arbitrage.</b> Profit after fees, itemised line by line.", "t41": "<b>Grading ROI.</b> Value per grade, with an honest confidence label.", "t42": "<b>Collection.</b> Point the camera at the card number to file it.", "t43": "<b>Alerts.</b> Set a target, get a push when it lands.", "t44": "Stills from the closed-beta film. Figures are illustrative.", "t45": "What shipped since the end of September", "t46": "1 Oct", "t47": "The app speaks Spanish first", "t48": "Every screen translated into Spain Spanish, euros by default with <b>38,90 €</b> formatting, and pushes and server errors in the user's language. Android's Hermes engine has no <code>Intl.PluralRules</code>, so plurals are handled explicitly.", "t49": "<strong>38,90 €</strong><span>Every screen in Spain Spanish, euros by default</span>", "t50": "1 Oct", "t51": "Arbitrage inside Europe", "t52": "Buy on eBay Europe with shipping to Spain included and resell on CardTrader, or buy an underpriced CardTrader copy. All in euros, with zero JustTCG quota. eBay is never the sell side, because its prices are asks, not sales.", "t53": "<strong>0</strong><span>JustTCG calls spent finding an EU trade</span>", "t54": "2–4 Oct", "t55": "Tournaments and the meta", "t56": "Every Limitless-hosted One Piece event with 16 or more players: leader share, win rate, share change, priced decklists showing the cards you own and the cost to complete, and the most-played cards per leader. The old ingest had been stuck on one organiser whose last event was in February 2025.", "t57": "<strong>88</strong><span>events and 3,931 standings on the first run</span>", "t58": "3–8 Oct", "t59": "A deck builder that knows your binder", "t60": "Save or copy a tournament deck, price it, see what you already own, and mark missing cards as bought. Buying adds them to the collection ledger.", "t61": "<strong>Deck to ledger</strong><span>Missing cards marked as bought go straight into the collection</span>", "t62": "5–7 Oct", "t63": "News, badges and an admin view", "t64": "An update feed with consent-masked tester credits and official Bandai news from a 12-hour poller. Nine badge rules evaluated on the server from data it already has. An admin dashboard for API quota per provider, users, feature use and job health. And an in-app prompt, because over-the-air updates were silently skipping testers on an older native build.", "t65": "<strong>9</strong><span>badge rules, evaluated server-side with zero API calls</span>", "t66": "9–11 Oct", "t67": "Where a card comes from", "t68": "Which sealed products a card is pulled from, the pull odds, and box expected value against box price. Every odds range cites a page that states it today. When the chase cards have no sourced odds, the expected value is withheld, with the reason shown.", "t69": "<strong>Withheld</strong><span>Box EV, once unsourced cards hold over 10% of the possible value</span>", "t70": "11–13 Oct", "t71": "Cardmarket, one tap away", "t72": "Every printing links to its exact Cardmarket page and opens it in an in-app browser. Prices come from Cardmarket's public daily Price Guide and stay admin-only until licensing is agreed. Outreach has been sent.", "t73": "<strong>13,384</strong><span>One Piece products in Cardmarket's daily Price Guide</span>", "t74": "16 Oct", "t75": "Prices by language", "t76": "English, Japanese, Chinese and Korean prices per printing, a language switch on card detail, and search and collection valued per language. Never a zero, and never another language's price standing in.", "t77": "<strong>EN JA ZH KO</strong><span>Four prices per printing, never borrowed from each other</span>", "t78": "12–16 Oct", "t79": "In testing", "t80": "Appraise a whole lot from photos", "t81": "Scan a stack of cards and get a total and a buy offer. OCR reads the card number, then an <b>ORB + RANSAC</b> artwork matcher in OpenCV decides which printing of that number the photo shows. It also reads Pokémon footers and Japanese One Piece cards, alongside a Pokémon catalogue imported from TCGdex. It's waiting on a real shop test.", "t82": "<strong>0</strong><span>wrong auto-picks in the benchmark, at three degradation severities</span>", "t83": "The closed-beta film", "t84": "Play, with sound", "t85": "The launch film for the closed beta, cut from the real app screens. The card art is abstract and the figures are illustrative, as the end card says.", "t86": "On suckura.app it runs in English and Spanish, on a landing page kept to 31 KB gzipped that makes no third-party requests.", "t87": "One hub every price passes through", "t88": "Search, arbitrage, alerts and grading all read prices through a single aggregator, so a change there ripples into all four at once. Each source client has a mock mode, a circuit breaker and a rate limiter, and fails closed when its quota runs out.", "t89": "asks, never sales", "t90": "EU marketplace, euros", "t91": "1,000 calls a month", "t92": "Price", "t93": "aggregator", "t94": "Search", "t95": "Arbitrage", "t96": "Alerts", "t97": "Grading ROI", "t98": "Price", "t99": "aggregator", "t100": "Search", "t101": "Arbitrage", "t102": "Alerts", "t103": "Grading", "t104": "Fee math", "t105": "What a sale actually leaves you", "t106": "The arbitrage engine never compares raw price gaps. Every trade is netted of the selling marketplace's <b>commission</b>, <b>payment fee</b> and <b>postage</b> before it counts as an opportunity. That's what kills most of the \"deals\" a naive price diff finds.", "t107": "This receipt runs the engine's Cardmarket defaults: 5% commission, 3% payment fee and €1.50 postage. Drag the price down and watch the fixed postage eat a cheap card.", "t108": "Sale price <output id=\"price-out\">€22.00</output>", "t109": "ONE SALE, ITEMISED", "t110": "european marketplace · private seller", "t111": "<span>Sale price</span><span id=\"rc-sale\">€22.00</span>", "t112": "<span>Commission 5%</span><span id=\"rc-com\">−€1.10</span>", "t113": "<span>Payment fee 3%</span><span id=\"rc-pay\">−€0.66</span>", "t114": "<span>Postage</span><span id=\"rc-post\">−€1.50</span>", "t115": "<span>YOU KEEP</span><b id=\"rc-net\">€18.74</b>", "t116": "<span>kept <span id=\"rc-kept\">85.2%</span></span><span>gone <span id=\"rc-gone\">14.8%</span></span>", "t117": "An illustration, not a quote. Real rates vary with the marketplace, seller tier and country.", "t118": "Three problems worth the write-up", "t119": "Straight out of the project's lessons log. Every number below is measured, and most of them came from a bug I had to find first.", "t120": "API quota budget", "t121": "Running a price app on a thousand calls a month", "t122": "The main catalogue API's free tier is <b>1,000 calls a month</b>. The monthly cap binds before the daily one, so the real sustained budget is about <b>33 calls a day</b>. That one number sets the 15-minute cache, the hourly alert check, the lazy-loaded tabs and the rate limiter.", "t123": "Card-number and set-code searches now run against a <b>local catalogue of 2,495 cards</b>, imported from image filenames at zero API cost, so a typo can't drain the month. When I needed to know whether a batch of ids costs one call or twenty, I measured it with three balance readings instead of guessing.", "t124": "The same readings turned up <b>880 of 1,000</b> calls already spent. A background sweep had been running at six times its default budget and stopped itself quietly at its safety floor. Nothing errored and nothing logged. It showed up only in the balance.", "t125": "<small>Lesson logged</small><q>A documented call cost is not a measured one: trace the path.</q>", "t126": "Monthly budget, JustTCG free tier", "t127": "1,000", "t128": "calls a month, divided by 30 days, is about 33 a day", "t129": "<span>day 1</span><span>about 33 calls each</span><span>day 30</span>", "t130": "Measuring a batch with balance readings", "t131": "<b>118</b><small>reading 1</small>", "t132": "−1<small>the reading</small>", "t133": "<b>117</b><small>reading 2</small>", "t134": "−2<small>reading + batch</small>", "t135": "<b>115</b><small>reading 3</small>", "t136": "A batch of up to 20 ids <b>bills as one request</b>. Ten calls a day re-price up to 200 printings, not 10.", "t137": "Price-data integrity", "t138": "The 1,594% return that wasn't there", "t139": "A Quick Scan on Dracule Mihawk OP01-070 said: buy raw at $1.06, grade it, sell the PSA 10 at $949.95, a <b>1594.83% return</b>. Re-running with grading switched off returned <b>zero</b> opportunities. The grading path was producing every result the feature had, and all of them were false.", "t140": "The comp filter could prove a premium marker was <b>present</b> in a listing title but never that it was <b>absent</b>, so every premium printing sharing the card number counted as a comp. Adding keywords made it worse, because tournament-prize cards carry no marker at all. The fix classifies which printing a title names in both directions, then makes the comp pool <b>agree with itself</b> or return nothing.", "t141": "All three flagged cards now refuse, each for a different reason (spread 10.0×, 2 comps, spread 4.7×). <b>7 of 10</b> surveyed cards still produce a coherent pool, clustering at 1.1–2.0× spread, which is where the 4× threshold comes from.", "t142": "<small>Lesson logged</small><q>A guard that can only prove presence is not a guard.</q>", "t143": "<span>Quick Scan, before the fix</span><span>OP01-070</span>", "t144": "<span>Buy raw</span><b>$1.06</b>", "t145": "<span>Sell as PSA 10</span><b>$949.95</b>", "t146": "<span>Reported return</span><s>1594.83%</s>", "t147": "Fabricated", "t148": "At least 3 comps in the pool", "t149": "p90 / p10 spread under 4×", "t150": "Graded-to-raw multiple under 50×", "t151": "<b>0</b><span>opportunities after the guards. The scan returns nothing rather than a number.</span>", "t152": "<b>7/10</b><span>surveyed cards still form a coherent comp pool, at 1.1–2.0× spread.</span>", "t153": "Cross-market matching", "t154": "Every printing, its own Cardmarket page", "t155": "A Parallel and its base card share a card number but not a price, so every printing needs its own link. The first importer scored <b>152 of 156</b> on the dev database and <b>2,316 of 6,950</b> in production. Dev held a single set, the one set where the rule's assumption happened to hold.", "t156": "That assumption was that a card number's prefix names its set. It doesn't: premium boosters file cards under the original set's number, promos live in four differently coded expansions, and two catalogues spell the same release differently. Blueprints are now indexed by their own collector prefix across all <b>99 expansions</b>, and the set name scores the candidates instead of gating one, with <b>zero unresolvable ties</b>.", "t157": "By the evening it was <b>5,688 of 6,950</b> linked, 85% of every printing that has a card number. What's left is left on purpose, because a card we can't place keeps a search link rather than a wrong one.", "t158": "<small>Lesson logged</small><q>Measure a catalogue rule on the catalogue, not on the dev database.</q>", "t159": "<span>6,950 printings, one dot each</span><span>22 Sep 2026</span>", "t160": "<span id=\"dots-n\">5,688</span> <small>of 6,950 linked</small>", "t161": "Morning", "t162": "Evening", "t163": "<span><i style=\"background:#C2557A\"></i>linked by the first importer</span><span><i style=\"background:#FF9E92\"></i>linked after the fix</span><span><i style=\"background:rgba(246,232,238,.22)\"></i>not linked</span>", "t164": "<span><b>247</b> DON!! cards with no number</span> <span><b>650</b> promos filed only under event buckets</span> <span><b>215</b> base / Special Rare ties</span> <span><b>77</b> blueprints with no Cardmarket id</span>", "t165": "Read the engineering log", "t166": "Four more failures from October that never raised an error, and every milestone since the first commit.", "t167": "Four more from October", "t168": "Shorter entries from the same log. Each one is a failure that never raised an error.", "t169": "15 Oct", "t170": "Retries that never retried", "t171": "Eight API clients handed tenacity a bare predicate. Tenacity 8.2.3 calls it with a <code>RetryCallState</code>, so the predicate never matched, and <b>no 5xx or timeout was ever retried</b> in any client. Nothing failed loudly. 4xx and 429 still never retry.", "t172": "<small>Lesson logged</small><q>A retry policy you never saw fire is untested, not working.</q>", "t173": "13 Oct", "t174": "Cardmarket links, checked against Cardmarket", "t175": "The importer now cross-checks every CardTrader-supplied Cardmarket id against Cardmarket's own product list, in one S3 GET. It refused <b>6 wrong links</b> on prod (4 confirmed in a browser) and linked <b>107 printings</b> CardTrader couldn't. Back on 22 September, the same importer had been linking 33% of the catalogue instead of 97%.", "t176": "<small>Lesson logged</small><q>A link from one catalogue is a claim. Check it against the other.</q>", "t177": "2 Oct", "t178": "The uncapped path", "t179": "Opening a card was the one JustTCG path with no cap: one call per printing every 15 minutes, and on <b>every</b> open when Redis was down. Now a stored price under 24 hours old answers without a call. A background sweep was also re-spending its daily allowance after every deploy. It now checks when it last ran.", "t180": "<small>Lesson logged</small><q>Every path to a paid API needs its own cap, including the obvious one.</q>", "t181": "11 Oct", "t182": "Box EV that refuses", "t183": "A source silently stopped stating pull odds. Box expected value is now withheld once unsourced cards hold <b>over 10%</b> of the possible value, rather than shown on bad odds. Same principle as the 1,594% return: no number beats a wrong number.", "t184": "<small>Lesson logged</small><q>No number beats a wrong number.</q>", "t185": "Twenty-four weeks, from first commit to a Spanish-first beta", "t186": "29 Apr", "t187": "First commit", "t188": "A backend MVP design spec, then an implementation plan the same day.", "t189": "30 Apr", "t190": "Real prices flow", "t191": "The catalogue API wired in for real, behind a mock mode every client keeps.", "t192": "24 Jul", "t193": "Card images move to an R2 CDN; the image grows lean.", "t194": "7 Aug", "t195": "eBay and arbitrage v2", "t196": "A second market, cross-market scanning and quota resilience.", "t197": "23 Aug", "t198": "Language split from variant", "t199": "A Japanese Parallel priced against an English one had read as a 1443% trade. Two facts, two axes.", "t200": "28 Aug", "t201": "CardTrader and Europe-first", "t202": "An EU marketplace in euros joins, and the product commits to Spain first.", "t203": "7 Sep", "t204": "suckura.app is live", "t205": "The landing site ships, then moves to Cloudflare Pages a day later.", "t206": "10 Sep", "t207": "Search stops spending quota", "t208": "Card-number search served from a local catalogue at zero API cost.", "t209": "12 Sep", "t210": "Push on a real phone", "t211": "Price alerts go live and deep-link into the app on device.", "t212": "13 Sep", "t213": "Fabricated returns removed", "t214": "Comp guards make the grading pool agree with itself or say nothing.", "t215": "18 Sep", "t216": "Collection ledger", "t217": "Purchases, sales and profit per card, at zero API cost.", "t218": "20 Sep", "t219": "Scan into your collection", "t220": "On-device OCR reads the printed card number into a tray.", "t221": "22 Sep", "t222": "A page per printing", "t223": "Cardmarket linking climbs from 2,316 to 5,688 printings in a day.", "t224": "26 Sep", "t225": "Closed-beta film", "t226": "The launch film for the closed beta, cut from the app's own screens.", "t227": "1 Oct", "t228": "Spanish first, arbitrage inside Europe", "t229": "Every screen in Spain Spanish, and EU trades priced in euros at zero JustTCG quota.", "t230": "4 Oct", "t231": "Tournaments and the meta", "t232": "88 events and 3,931 standings on the first run.", "t233": "8 Oct", "t234": "Deck builder", "t235": "Tournament decks priced against your collection, missing cards one tap from the ledger.", "t236": "11 Oct", "t237": "Card sourcing and box EV", "t238": "Pull odds with a cited source, or no expected value at all.", "t239": "13 Oct", "t240": "Cardmarket in the app", "t241": "Every printing opens its exact Cardmarket page.", "t242": "15 Oct", "t243": "Retries that retry", "t244": "Eight API clients finally retry 5xx errors and timeouts.", "t245": "16 Oct", "t246": "Prices by language", "t247": "English, Japanese, Chinese and Korean prices for every printing.", "t248": "ML and data work", "t249": "Deep learning, classical ML and data engineering from university and my bachelor's thesis. Open a row for the details.", "t250": "<span class=\"proj-kind\">Deep learning</span><span class=\"proj-title\">Business Image Classifier</span> <span class=\"proj-sum\">Multimodal deep learning that sorts business images into 28 categories using visual features plus OCR text.</span>", "t251": "Trained a multimodal CNN architecture to classify business images across 28 classes. Key finding: text presence in images significantly boosts prediction accuracy, validated through systematic hypothesis testing across data splits. Tracked with W&amp;B.", "t252": "classes", "t253": "modalities", "t254": "image + text", "t255": "Computer Vision", "t256": "View repository ↗", "t257": "<span class=\"proj-kind\">Bachelor's thesis, 9/10</span><span class=\"proj-title\">ETL Pipeline for Commercial Prospecting</span> <span class=\"proj-sum\">Consolidates prospecting data from multiple sources into one clean repository.</span>", "t258": "Designed and implemented a full ETL pipeline that consolidates commercial prospecting data from heterogeneous sources. Built robust cleansing and normalization routines to ensure data integrity before loading into a centralized CRM system.", "t259": "thesis grade", "t260": "sources integrated", "t261": "enrichment rate", "t262": "98%", "t263": "peak throughput", "t264": "953 registers/s", "t265": "Data Quality", "t266": "Data Processing", "t267": "Private repository", "t268": "<span class=\"proj-kind\">Databases</span><span class=\"proj-title\">Relational Data Analysis System</span> <span class=\"proj-sum\">Schema design, query optimisation and processing over 100k+ records, with a 44% cut in query time.</span>", "t269": "Designed a normalized relational schema, implemented optimized queries and indexing strategies resulting in a 44% reduction in query execution time across 100k+ records.", "t270": "records", "t271": "query speedup", "t272": "44%", "t273": "Private repository", "t274": "<span class=\"proj-kind\">Data visualisation</span><span class=\"proj-title\">Population Growth Analysis</span> <span class=\"proj-sum\">UN population data across 200+ regions: cleaning, correlation analysis and animated visualisations in R.</span>", "t275": "Full data pipeline in R: raw UN population CSV ingestion, tidyverse-based cleaning, correlation matrix generation, and animated/interactive plots via gganimate and Plotly. Covers birth/death differentials and total population trends across 200+ regions.", "t276": "regions", "t277": "Data Viz", "t278": "View repository ↗", "t279": "Where I've built things", "t280": "A product of my own, a data role at SAP, and five years of data engineering at university.", "t281": "Founder", "t282": "Apr 2026 to present, closed beta", "t283": "Building solo, end to end: a <b>FastAPI</b> backend on Render, a <b>React Native (Expo)</b> app, and the landing site on Cloudflare Pages, plus every product decision in between.", "t284": "Prices One Piece cards across eBay, CardTrader and JustTCG, matches each printing across catalogues and links it to its exact Cardmarket page, and nets every cross-market trade of commission, payment fee and postage.", "t285": "Runs on a <b>1,000-call-a-month</b> pricing API: circuit breakers, rate limiting, a 15-minute Redis cache that never stores a failure, and a local catalogue that answers card-number searches at zero API cost.", "t286": "Shipped a Spanish-first app, arbitrage inside Europe, tournament meta from <b>88 events</b>, a deck builder and prices in four card languages in October alone.", "t287": "Backed by a <b>1,983-test</b> backend suite covering pricing, arbitrage fees, alerts, grading and the collection ledger.", "t288": "Data Engineer &amp; Analyst<small>titled Digital Demand Associate</small>", "t289": "Nov 2025 to May 2026", "t290": "Transitioned legacy data workflows from self-developed VBA modules to a high-throughput ETL pipeline; increased data quality from <b>73% to 90%</b> and slashed manual processing by <b>81%</b>.", "t291": "Developed an interactive 2026 Sales Performance Hub for two global teams, automating the tracking of quarterly targets, pipeline generation, and lead handovers with granular drill-down capabilities.", "t292": "B.Sc Data Engineering", "t293": "Sep 2021 to Jul 2026, thesis 9/10", "t294": "(Bachelor's thesis) End-to-end ETL system consolidating prospecting data from multiple sources with data quality cleansing, normalization, and centralized repository loading.", "t295": "Engineered an end-to-end sentiment analysis framework evaluating SVM, Random Forest, and Naive Bayes models; optimized performance to a <b>90% F1-score</b> through rigorous hyperparameter tuning and cross-validation.", "t296": "Developed a comprehensive ML evaluation suite to analyze Precision-Recall trade-offs and Confusion Matrices, ensuring model robustness against imbalanced linguistic datasets.", "t297": "Engineered a real-time object detection pipeline using OpenCV to monitor car license plates on highways, achieving <b>88% accuracy</b> in identifications.", "t298": "Developed a high-frequency backtesting engine using Cython for core computation, achieving a <b>50x speedup</b> over pure Python for complex matrix operations.", "t299": "Optimized memory-intensive graph theory algorithms for social network analysis, reducing computational complexity from O(n²) to O(n log n).", "t300": "The person behind it", "t301": "<span>Open to work</span><span>Barcelona, ES</span><span>CET / UTC+1</span><span>Applied AI, production systems</span>", "t302": "I'm a 23-year-old Applied AI Engineer with a data engineering foundation. I build the systems that move information at scale, then put models and AI on top of them.", "t303": "Right now I'm building Suckura solo: backend, mobile client, infrastructure and product decisions, all of it. Outside that I'm reading AI papers, shipping side projects, or grinding the ladder in the most competitive videogames out there.", "t304": "Currently", "t305": "Just finished B.Sc Data Engineering", "t306": "Building Suckura, in closed beta", "t307": "Learning applied AI, GaaS and Japanese", "t308": "Languages", "t309": "Spanish <span>native</span>", "t310": "Catalan <span>native</span>", "t311": "English <span>advanced (C1)</span>", "t312": "French <span>dual high school diploma (C1 equivalent)</span>", "t313": "data as a product, not a byproduct", "t314": "automation is the ultimate form of laziness and the highest form of efficiency", "t315": "elegant complexity", "t316": "data as a product, not a byproduct", "t317": "automation is the ultimate form of laziness and the highest form of efficiency", "t318": "elegant complexity", "t319": "build to learn (and for the 3 AM incident)", "t320": "the ethics of information", "t321": "AI is the engine, clean data is the fuel", "t322": "build to learn (and for the 3 AM incident)", "t323": "the ethics of information", "t324": "AI is the engine, clean data is the fuel", "t325": "Off the clock: peak ranks", "t326": "Competitive games I've played seriously, and the highest rank I reached in each.", "t327": "<b>Global Elite</b><span class=\"g\">CS:GO, 2019</span><span class=\"n\">Highest rank in matchmaking, top ~0.7%</span>", "t328": "<b>Grand Champion</b><span class=\"g\">Rocket League, 2019</span><span class=\"n\">Top rank before the Supersonic Legend era, top 0.05%</span>", "t329": "<b>Immortal 2</b><span class=\"g\">Valorant, 2023</span><span class=\"n\">One tier below Radiant, top 0.04% (#6855)</span>", "t330": "<b>2671 rating</b><span class=\"g\">World of Warcraft, 2010</span><span class=\"n\">2v2 Arena, Gladiator-tier bracket, top 0.5% (yes, 2010)</span>", "t331": "<b>Legend #3,503</b><span class=\"g\">Hearthstone, 2024</span><span class=\"n\">Season 124, 70% win rate, top ~0.1%</span>", "t332": "<b>Legendary #4</b><span class=\"g\">Fantasy Rivals, 2014</span><span class=\"n\">Top 4 worldwide</span>", "t333": "<b>Master</b><span class=\"g\">Paladins, 2016</span><span class=\"n\">Highest rank before the OB56 rework, top 50 Androxus worldwide</span>", "t334": "<b>Unreal</b><span class=\"g\">Fortnite, 2023</span><span class=\"n\">Top rank, top ~0.5%, €3k earnings 2017–2022</span>", "t335": "<b>Diamond</b><span class=\"g\">SR &amp; TFT, 2025–26</span><span class=\"n\">New player to Diamond in 2 months, top ~2%</span><span class=\"n\">Currently #8078, top 1.2%</span>", "t336": "What I work with", "t337": "Years of hands-on use, not courses taken.", "t338": "AI / ML", "t339": "<span>PyTorch</span><small>3 yrs</small>", "t340": "<span>Scikit-learn</span><small>4 yrs</small>", "t341": "<span>LLM APIs</span><small>2 yrs</small>", "t342": "<span>TensorFlow</span><small>2 yrs</small>", "t343": "Backend &amp; applied AI", "t344": "<span>Python</span><small>5 yrs</small>", "t345": "<span>FastAPI</span><small>&lt;1 yr</small>", "t346": "<span>Redis</span><small>&lt;1 yr</small>", "t347": "<span>React Native, Expo</span><small>&lt;1 yr</small>", "t348": "Data engineering", "t349": "<span>Apache Spark</span><small>2 yrs</small>", "t350": "<span>Pandas</span><small>5 yrs</small>", "t351": "<span>PostgreSQL</span><small>2 yrs</small>", "t352": "<span>SQL</span><small>4 yrs</small>", "t353": "<span>ETL pipelines</span><small>4 yrs</small>", "t354": "Infrastructure", "t355": "<span>Docker / K8s</span><small>1 yr</small>", "t356": "<span>Azure / AWS</span><small>2 yrs</small>", "t357": "<span>Cloudflare</span><small>&lt;1 yr</small>", "t358": "<span class=\"ln\" aria-hidden=\"true\">Let's build</span><span class=\"ln\" aria-hidden=\"true\">something</span><span class=\"ln\" aria-hidden=\"true\">intelligent.</span>", "t359": "Open to Applied AI and AI engineering roles, ML collaborations, and interesting side projects. I reply within 24 hours.", "t360": "Copy email", "t361": "Name", "t362": "What are you working on?", "t363": "Open in your email app", "t364": "<span>© 2026 Dante Rodríguez Milán</span> <span>Barcelona, built by hand, no framework</span> <a href=\"#top\">Back to top</a>", "t9001": "29 Apr 2026", "t9002": "Docker and Cloudflare R2"};
+  var EN_ATTR = {"a0": "Applied AI Engineer with a data engineering foundation. I build production AI systems end to end, from data pipelines to shipped products. Based in Barcelona, Spain.", "a1": "Dante Rodríguez Milán | Applied AI Engineer", "a2": "Applied AI Engineer with a data engineering foundation. I build production AI systems end to end, from data pipelines to shipped products.", "a3": "Dante Rodríguez Milán | Applied AI Engineer", "a4": "Applied AI Engineer with a data engineering foundation. I build production AI systems end to end, from data pipelines to shipped products.", "a5": "Sections", "a6": "Language", "a7": "Dante's player card. Turn it over to see the stats.", "a8": "Age", "a9": "About Suckura", "a10": "Stack", "a11": "Suckura search screen listing Monkey D. Luffy printings with a price for each", "a12": "Card detail showing CardTrader, Cardmarket and eBay prices in euros side by side", "a13": "Arbitrage screen with a fee breakdown ending in the net profit of a flip", "a14": "Grading ROI screen comparing value per grade against grading cost", "a15": "Collection screen showing total value and a grid of owned cards", "a16": "A price alert push notification landing over the alerts list", "a17": "Play the beta film with sound", "a18": "Three price sources, eBay, CardTrader and JustTCG, feed one price aggregator, which serves search, arbitrage, alerts and grading ROI.", "a19": "Dot grid of 6,950 printings. 2,316 linked in the morning, 5,688 linked by the evening.", "a20": "Show linking coverage at", "a21": "Portrait of Dante Rodríguez Milán", "a22": "Principles", "a23": "Let's build something intelligent."};
+  var EN_TITLE = "Dante Rodríguez Milán | Applied AI Engineer";
+  var UI = {
+    es: { copy: 'Copiar email', copied: 'Copiado', copiedSr: 'Dirección de email copiada', logOpen: 'Leer el registro de ingeniería', logClose: 'Cerrar el registro de ingeniería', subject: 'Mensaje de ' },
+    en: { copy: 'Copy email', copied: 'Copied', copiedSr: 'Email address copied', logOpen: 'Read the engineering log', logClose: 'Close the engineering log', subject: 'Hello from ' }
+  };
+  var ES = {}, ES_ATTR = {}, ES_TITLE = document.title, lang = 'es';
+  $$('[data-i18n]').forEach(function (el) { ES[el.dataset.i18n] = el.innerHTML; });
+  $$('[data-i18n-attr]').forEach(function (el) {
+    el.dataset.i18nAttr.split(';').forEach(function (pair) { var kv = pair.split(':'); ES_ATTR[kv[1]] = el.getAttribute(kv[0]); });
+  });
+  var langHooks = { before: [], after: [] };
+  var t = function (k) { return UI[lang][k]; };
+  // 1.983 / 22,00 € / 85,2 % in Spanish; 1,983 / €22.00 / 85.2% in English
+  var group = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, lang === 'es' ? '.' : ','); };
+  var eur = function (n) { var v = n.toFixed(2); return lang === 'es' ? v.replace('.', ',') + ' €' : '€' + v; };
+  var pct = function (n) { var v = n.toFixed(1); return lang === 'es' ? v.replace('.', ',') + ' %' : v + '%'; };
+
+  function setLang(next, initial) {
+    next = next === 'en' ? 'en' : 'es';
+    if (!initial && next === lang) return;
+    langHooks.before.forEach(function (fn) { fn(); });
+    lang = next;
+    var en = lang === 'en';
+    $$('[data-i18n]').forEach(function (el) {
+      var v = en ? EN[el.dataset.i18n] : ES[el.dataset.i18n];
+      if (v != null && el.innerHTML !== v) el.innerHTML = v;
+    });
+    $$('[data-i18n-attr]').forEach(function (el) {
+      el.dataset.i18nAttr.split(';').forEach(function (pair) {
+        var kv = pair.split(':'), v = en ? EN_ATTR[kv[1]] : ES_ATTR[kv[1]];
+        if (v != null) el.setAttribute(kv[0], v);
+      });
+    });
+    document.title = en ? EN_TITLE : ES_TITLE;
+    root.lang = lang;
+    $$('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    langHooks.after.forEach(function (fn) { fn(); });
+    if (!initial) {
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+      var u = new URL(location.href);
+      if (en) u.searchParams.set('lang', 'en'); else u.searchParams.delete('lang');
+      history.replaceState(null, '', u);
+    }
+  }
+  (function () {
+    var q = /[?&]lang=(en|es)\b/.exec(location.search), saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    setLang(q ? q[1] : saved, true);
+    root.classList.remove('i18n-en');
+  })();
+  $$('.lang button').forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+
   /* ---------- behaviour that works without GSAP ---------- */
 
   // mobile menu
@@ -1386,9 +1448,9 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
   var copyBtn = $('#copy-email'), copyStatus = $('#copy-status');
   copyBtn.addEventListener('click', function () {
     var done = function (ok) {
-      copyBtn.textContent = ok ? 'Copied' : EMAIL;
-      copyStatus.textContent = ok ? 'Email address copied' : '';
-      setTimeout(function () { copyBtn.textContent = 'Copy email'; }, 2200);
+      copyBtn.textContent = ok ? t('copied') : EMAIL;
+      copyStatus.textContent = ok ? t('copiedSr') : '';
+      setTimeout(function () { copyBtn.textContent = t('copy'); }, 2200);
     };
     if (navigator.clipboard) navigator.clipboard.writeText(EMAIL).then(function () { done(true); }, function () { done(false); });
     else done(false);
@@ -1398,14 +1460,13 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
   $('#mail-form').addEventListener('submit', function (e) {
     e.preventDefault();
     var f = e.target;
-    var subject = 'Hello from ' + f.name.value.trim();
+    var subject = t('subject') + f.name.value.trim();
     var body = f.msg.value.trim() + '\n\n' + f.name.value.trim() + '\n' + f.email.value.trim();
     location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   });
 
   // fee receipt
   var range = $('#price');
-  var eur = function (n) { return '€' + n.toFixed(2); };
   function fee() {
     var p = +range.value, c = p * .05, f = p * .03, s = 1.5, k = p - c - f - s, kept = Math.max(0, k / p * 100);
     $('#price-out').textContent = eur(p);
@@ -1415,11 +1476,12 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
     $('#rc-post').textContent = '−' + eur(s);
     $('#rc-net').textContent = eur(k);
     $('#rc-bar').style.width = kept.toFixed(1) + '%';
-    $('#rc-kept').textContent = kept.toFixed(1) + '%';
-    $('#rc-gone').textContent = (100 - kept).toFixed(1) + '%';
+    $('#rc-kept').textContent = pct(kept);
+    $('#rc-gone').textContent = pct(100 - kept);
     range.style.setProperty('--fill', ((p - range.min) / (range.max - range.min) * 100) + '%');
   }
   range.addEventListener('input', fee); fee();
+  langHooks.after.push(fee);
 
   // film
   var film = $('#film'), playBtn = $('.film-play');
@@ -1433,9 +1495,13 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
   logBtn.addEventListener('click', function () {
     var open = log.classList.toggle('open');
     logBtn.setAttribute('aria-expanded', open);
-    logBtn.textContent = open ? 'Close the engineering log' : 'Read the engineering log';
+    logBtn.textContent = open ? t('logClose') : t('logOpen');
     if (open) logBody.removeAttribute('inert'); else logBody.setAttribute('inert', '');
     if (window.ScrollTrigger) setTimeout(function () { ScrollTrigger.refresh(); }, 950);
+  });
+  langHooks.after.push(function () {
+    logBtn.textContent = log.classList.contains('open') ? t('logClose') : t('logOpen');
+    copyBtn.textContent = t('copy');
   });
 
   // project rows
@@ -1496,7 +1562,7 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
         ctx.arc((k % cols) * cell + cell / 2, Math.floor(k / cols) * cell + cell / 2, r, 0, 6.2832);
         ctx.fill();
       }
-      $('#dots-n').textContent = lit.toLocaleString('en');
+      $('#dots-n').textContent = group(lit);
     }
     function press(evening) { btns.forEach(function (b) { b.setAttribute('aria-pressed', (b.dataset.m === '1') === evening); }); }
     function go(to) {
@@ -1506,6 +1572,7 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
     }
     btns.forEach(function (b) { b.addEventListener('click', function () { go(b.dataset.m === '1' ? EVENING : MORNING); }); });
     window.addEventListener('resize', draw);
+    langHooks.after.push(draw);
     draw();
     // first time it comes into view: play the day once, morning then evening
     return { intro: function () {
@@ -1598,13 +1665,7 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
          .fromTo('.bloom-petals', { autoAlpha: 0 }, { autoAlpha: .3, duration: .2 }, .5)
          .from('.bloom-copy img', { yPercent: 70, autoAlpha: 0, duration: .14 }, .62)
          .from('.bloom-copy p', { autoAlpha: 0, duration: .1 }, .9);
-  if (hasSplit) {
-    SplitText.create('.sk-h', { type: 'lines', mask: 'lines', autoSplit: true, onSplit: function (self) {
-      bloomTl.from(self.lines, { yPercent: 110, stagger: .05, duration: .22, ease: 'power3.out' }, .68);
-    } });
-  } else {
-    bloomTl.from('.sk-h', { autoAlpha: 0, duration: .2 }, .68);
-  }
+  bloomTl.from('.sk-h', { yPercent: 18, autoAlpha: 0, duration: .22, ease: 'power3.out' }, .66);
 
 
   // the reel slides sideways while pinned
@@ -1637,12 +1698,26 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
   /* --- everything else --- */
 
   // headline line reveals, the Suckura vocabulary
-  $$('[data-split]').forEach(function (el) {
-    if (!hasSplit) { gsap.from(el, { autoAlpha: 0, y: 30, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } }); return; }
-    SplitText.create(el, { type: 'lines', mask: 'lines', autoSplit: true, onSplit: function (self) {
-      return gsap.from(self.lines, { yPercent: 110, duration: 1.2, ease: 'expo.out', stagger: .08, scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
-    } });
-  });
+  var splits = [];
+  function splitHeadings() {
+    $$('[data-split]').forEach(function (el) {
+      if (!hasSplit) { gsap.from(el, { autoAlpha: 0, y: 30, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } }); return; }
+      var entry = { anim: null };
+      entry.split = SplitText.create(el, { type: 'lines', mask: 'lines', autoSplit: true, onSplit: function (self) {
+        entry.anim = gsap.from(self.lines, { yPercent: 110, duration: 1.2, ease: 'expo.out', stagger: .08, scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+        return entry.anim;
+      } });
+      splits.push(entry);
+    });
+  }
+  splitHeadings();
+  if (hasSplit) {
+    langHooks.before.push(function () {
+      splits.forEach(function (e) { if (e.anim) { if (e.anim.scrollTrigger) e.anim.scrollTrigger.kill(); e.anim.revert(); } e.split.revert(); });
+      splits = [];
+    });
+    langHooks.after.push(splitHeadings);
+  }
 
   // film grows to full width
   gsap.fromTo('.film-frame', { scale: .82, borderRadius: 40 }, { scale: 1, borderRadius: 20, ease: 'none', scrollTrigger: { trigger: '.film-frame', start: 'top bottom', end: 'center 55%', scrub: true } });
@@ -1712,7 +1787,15 @@ body.is-dark .cursor.big { background: rgba(255,158,146,.2); }
 
   // contact headline: each line widens out of a squeeze. Transforms only, so the
   // glyphs are drawn once; animating the font's width axis re-shaped them every frame.
-  gsap.fromTo('.contact-h .ln', { scaleX: .62, yPercent: 30 }, { scaleX: 1, yPercent: 0, ease: 'none', stagger: .15, scrollTrigger: { trigger: '.contact', start: 'top 85%', end: 'top 20%', scrub: true } });
+  var contactTw;
+  function contactStretch() {
+    contactTw = gsap.fromTo('.contact-h .ln', { scaleX: .62, yPercent: 30 }, { scaleX: 1, yPercent: 0, ease: 'none', stagger: .15, scrollTrigger: { trigger: '.contact', start: 'top 85%', end: 'top 20%', scrub: true } });
+  }
+  contactStretch();
+  langHooks.before.push(function () { contactTw.scrollTrigger.kill(); contactTw.revert(); });
+  langHooks.after.push(contactStretch);
+  // new text means new heights: let every trigger re-measure
+  langHooks.after.push(function () { ScrollTrigger.refresh(); });
 
   // nav hides going down, returns going up
   ScrollTrigger.create({ start: 0, end: 'max', onUpdate: function (s) {
